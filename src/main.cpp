@@ -9,7 +9,7 @@
 
 extern void execute(); // makepak.cpp
 
-int main() {
+int main(int argc, char** argv) {
 
     //Load assets from pak 
     //execute();
