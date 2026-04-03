@@ -19,14 +19,14 @@ int main() {
  
     DataEngine *engine = new DataEngine; // Startup
 
-    HANDLE mutex = CreateMutex(NULL, TRUE, "MyUniqueAppMutexName"); // Fara multe cliente
+    HANDLE mutex = CreateMutex(NULL, TRUE, "MyUniqueAppMutexName"); // Just one client 
     if (GetLastError() == ERROR_ALREADY_EXISTS) {
         MessageBox(NULL, "Another client is already running.", "Client Check", MB_OK | MB_ICONEXCLAMATION);
         return 1;
     }
 
     HWND windowHandle = GetConsoleWindow();
-	ShowWindow(windowHandle,SW_HIDE); // Fara consola
+	ShowWindow(windowHandle,SW_HIDE); // No console
 
     //------------------------------------------------------------
 
@@ -40,4 +40,3 @@ int main() {
     return 0;
 }
 
-// g++ -O2 -o program.exe sourcecode.cpp -static -static-libgcc -static-libstdc++ {other libraries in order of dependency}. 
