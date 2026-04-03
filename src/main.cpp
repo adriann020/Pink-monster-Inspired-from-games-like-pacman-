@@ -1,1 +1,43 @@
+#include <iostream>
+#include "headers/List.h"
+#include "headers/Comp.h"
+#include <SDL3_ttf/SDL_ttf.h>
+#include <SDL3/SDL.h> 
+#include <fstream>
+#include <Windows.h>
+// -mwindows
 
+extern void execute(); // makepak.cpp
+
+int main() {
+
+    //Load assets from pak 
+    //execute();
+
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO); // Video, audio
+    TTF_Init();
+ 
+    DataEngine *engine = new DataEngine; // Startup
+
+    HANDLE mutex = CreateMutex(NULL, TRUE, "MyUniqueAppMutexName"); // Fara multe cliente
+    if (GetLastError() == ERROR_ALREADY_EXISTS) {
+        MessageBox(NULL, "Another client is already running.", "Client Check", MB_OK | MB_ICONEXCLAMATION);
+        return 1;
+    }
+
+    HWND windowHandle = GetConsoleWindow();
+	ShowWindow(windowHandle,SW_HIDE); // Fara consola
+
+    //------------------------------------------------------------
+
+    // Client
+    engine->forClient();
+
+    ReleaseMutex(mutex);
+
+    delete engine; // Cleanup (end)
+
+    return 0;
+}
+
+// g++ -O2 -o program.exe sourcecode.cpp -static -static-libgcc -static-libstdc++ {other libraries in order of dependency}. 
