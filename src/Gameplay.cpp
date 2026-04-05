@@ -1,5 +1,4 @@
 #include "headers/Comp.h"
-#include "headers/List.h"
 
 // Everything below is running on loop in client -> Client.cpp !!!
 
@@ -25,7 +24,7 @@ void DataEngine::updateScore() {
 void DataEngine::ResetScore(){
     if(CollisionNPC(this->coordinates->destRect, this->coordinates->npcRect) == 1 || CollisionNPC(this->coordinates->destRect, this->coordinates->blueNpcRect) == 1){
 
-        this->gameState->showLOST = true; // Verifies collision with NPCs
+        this->uiState->showLOST = true; // Verifies collision with NPCs
 
         showscore = this->score->reset();
         std::string scoreText = "Score: " + std::to_string(showscore);
@@ -160,10 +159,10 @@ void DataEngine::MoveNPC() {
 void DataEngine::MovementChar() {
 
     // Getting input everytime
-    bool const up = this->gameState->state[SDL_SCANCODE_W];
-    bool const down = this->gameState->state[SDL_SCANCODE_S];
-    bool const left = this->gameState->state[SDL_SCANCODE_A];
-    bool const right = this->gameState->state[SDL_SCANCODE_D];
+    bool const up = this->inputState->state[SDL_SCANCODE_W];
+    bool const down = this->inputState->state[SDL_SCANCODE_S];
+    bool const left = this->inputState->state[SDL_SCANCODE_A];
+    bool const right = this->inputState->state[SDL_SCANCODE_D];
 
     int keysPressed = up + down + left + right;
 
@@ -559,9 +558,9 @@ void DataEngine::MovementChar() {
 //Loss
 void DataEngine::YouLost() {
 
-    if(this->gameState->showLOST == true){
+    if(this->uiState->showLOST == true){
 
-        this->gameState->startover = true;
+        this->uiState->startover = true;
         //SDL_RenderTexture(renderer, this->init_textures->get_imageTextureLOST(), NULL, &LOSTrect);
         SDL_RenderTexture(renderer, this->init_texture->get_imageTextureGameOverMap(), NULL, &this->coordinates->gameovermapRect);
 
@@ -582,18 +581,18 @@ void DataEngine::YouLost() {
         this->gameState->speed = 0; // char
         this->gameState->speed2 = 0; // npc
         
-    }else this->gameState->startover = false;
+    }else this->uiState->startover = false;
     
 }
 
 //StartOver
 void DataEngine::StartOver() {
     
-    this->gameState->play = true; // Menu ended
+    this->uiState->play = true; // Menu ended
 
-    this->gameState->showLOST = false; // Startover , map etc ended
+    this->uiState->showLOST = false; // Startover , map etc ended
 
-    if(this->gameState->startover == true) {
+    if(this->uiState->startover == true) {
 
         this->gameState->speed = 3.5; // char original var
         this->gameState->speed2 = 4; // npc original var
