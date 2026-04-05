@@ -1,5 +1,4 @@
-#ifndef LIST_H
-#define LIST_H
+#pragma once
 #include <SDL3/SDL.h>
 #include <SDL3_ttf/SDL_ttf.h>
 
@@ -22,17 +21,14 @@ struct GameState {
   float speed2 = 4; // Npcs
   float rotationAngle = 0; // (not used yet)
   float imgWidth = 1000, imgHeight = 1000; // char (not used)
-
-  bool changeMap = false; // Changemap
-  bool play = false; // Play 
   
-  bool fix = false; // Char (stanga/dreapta)
+  bool fix = false; // Char (left/right)
   bool doubletexturefix = false; // Fixed char double texture 
 
-  bool turntextcont = false; // Continue text effect
-  bool showLOST = false; // Showlost 
-  bool startover = false; // Fixed bug for teleport when pressing space , even tho you didn't lose.
+  
   bool stopmenumusic = false; // Stop menu music
+  bool turntextcont = false; // Continue text effect
+
 
   //------------------ For NPCS Movement
 
@@ -51,9 +47,28 @@ struct GameState {
   SDL_FlipMode flip = SDL_FLIP_NONE; // Npc owl
   SDL_FlipMode flipBlue = SDL_FLIP_NONE; // Npc blue
 
-  const bool *state = SDL_GetKeyboardState(NULL);
 
 };
+
+struct InputState {
+  const bool *state = SDL_GetKeyboardState(NULL);
+  bool up = false;
+  bool down = false;
+  bool left = false;
+  bool right = false;
+
+};
+
+struct UIState {
+
+  bool changeMap = false; // Changemap
+  bool play = false; // Play 
+  
+  bool showLOST = false; // Showlost 
+  bool startover = false; // Fixed bug for teleport when pressing space , even tho you didn't lose.
+
+};
+
 
 struct AnimationState {
 
@@ -129,31 +144,3 @@ struct Music {
 };
 
 
-class  ScoreAndMore {
-
-  private:
-
-    int score = 0;
-
-  public:
-
-   int reset(){
-     score = 0;
-     return score;
-   }
-
-   void forScore() {
-        score++;
-    }
-   int getScore() const {
-        return score;
-    }
-    
-  
-}; 
-
-
-
-
-
-#endif 
