@@ -35,7 +35,7 @@ class DataEngine : public AnimationState, public Text, public Music, public Clie
             QuitTTF_And_SDL();
         }
 
-        // Inceput
+        // Main
         void forWindow();
         void forRenderer();
         void LoadTexture();
