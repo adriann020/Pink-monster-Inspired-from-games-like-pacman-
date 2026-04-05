@@ -1,5 +1,4 @@
 #include "headers/Comp.h"
-#include "headers/List.h"
 #include "Init_textures.h"
 #include "Init_sounds.h"
 #include <iostream>
@@ -301,6 +300,7 @@ void DataEngine::ClearRenderer() {
 }
 
 void DataEngine::ClearWindow() {
+
     window_closed.open("../data/logs.txt", std::ios::app);
     window_closed << "[SYSTEM] -> The game has been closed successfully." << std::endl;
     window_closed.close();
@@ -319,6 +319,10 @@ void DataEngine::deleteObjects(){
     this->pak = nullptr; // pointer for pak
     delete this->gameState; // pointer for game state
     this->gameState = nullptr; // pointer for game state
+    delete this->uiState; // pointer for UI state
+    this->uiState = nullptr; // pointer for UI state
+    delete this->inputState; // pointer for input state
+    this->inputState = nullptr; // pointer for input state
     delete this->coordinates; // pointer for coordinates
     this->coordinates = nullptr; // pointer for coordinates
     
