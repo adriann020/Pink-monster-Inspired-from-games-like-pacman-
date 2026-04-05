@@ -1,5 +1,4 @@
 #include "headers/Comp.h"
-#include "headers/List.h"
 #include <fstream>
 #include <unistd.h>
 
@@ -56,9 +55,9 @@ void DataEngine::forClient() {
         }
 
         // Ready to change the map
-        if (this->gameState->play == true) {
+        if (this->uiState->play == true) {
         
-            this->gameState->changeMap = true;
+            this->uiState->changeMap = true;
             this->gameState->stopmenumusic = true;
 
             SDL_DestroyTexture(this->init_texture->get_imageTexturePlay()); // Play
@@ -69,7 +68,7 @@ void DataEngine::forClient() {
         }
 
         // Changes the map
-        if (this->gameState->changeMap == true) {
+        if (this->uiState->changeMap == true) {
 
             RenderImportantThings(renderer, this->init_texture->get_imageTextureFightmap(), this->coordinates->mapFightRect); // Fightmap
 
