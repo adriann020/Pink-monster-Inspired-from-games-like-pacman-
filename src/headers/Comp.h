@@ -1,6 +1,4 @@
-
-#ifndef COMP_H
-#define COMP_H
+#pragma once
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -139,5 +137,3 @@ class DataEngine : public AnimationState, public Text, public Music, public Clie
         void deleteObjects();
 
 };
-#endif 
-
