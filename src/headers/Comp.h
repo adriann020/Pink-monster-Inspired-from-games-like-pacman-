@@ -1,8 +1,8 @@
 #pragma once
-#include <string>
 #include <iostream>
 #include <fstream>
-#include "List.h"
+#include "GameTypes.h"
+#include "Score.h"
 #include "../Init_textures.h"
 #include "../Init_sounds.h"
 #include "../pak.h"
@@ -12,7 +12,8 @@
 using Surface = SDL_Surface; // For surfaces
 using Texture = SDL_Texture; // For textures
 
-class DataEngine : public AnimationState, public Text, public Music, public ClientFixes {
+
+class DataEngine : public AnimationState, public Text, public ClientFixes {
 
     public:     
 
@@ -108,7 +109,6 @@ class DataEngine : public AnimationState, public Text, public Music, public Clie
         //Pak
         SDL_Surface* LoadSurfaceFromPak( Pak *pak,  const std::string& path);
 
-
     private:   
 
         //---------------INIT---------------//
@@ -121,7 +121,17 @@ class DataEngine : public AnimationState, public Text, public Music, public Clie
         //For assets
         Pak *pak = new Pak; 
         //For game state
-        GameState *gameState = new GameState; 
+        PlayerState *playerState = new PlayerState; 
+        //For NPC state
+        NpcState *npcState = new NpcState;
+        //For effects state
+        EffectState *effectState = new EffectState;
+        //For music state
+        Music *musicState = new Music;
+        //For UI state
+        UIState *uiState = new UIState; 
+        //For input state 
+        InputState *inputState = new InputState; 
         //For coordinates
         Coordinates *coordinates = new Coordinates;
         //For textures , surfaces , text
@@ -137,3 +147,4 @@ class DataEngine : public AnimationState, public Text, public Music, public Clie
         void deleteObjects();
 
 };
+
