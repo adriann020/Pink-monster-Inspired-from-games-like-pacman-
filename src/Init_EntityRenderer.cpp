@@ -1,10 +1,8 @@
 #include "headers/Comp.h"
-#include <iostream>
-
-
 
 void DataEngine::RenderTextureRotated() { // Char
     if(this->gameState->fix){
+        // could've done NULL instead of this->..->rotationAngle
          SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), NULL, &this->coordinates->destRect, this->gameState->rotationAngle, NULL, SDL_FLIP_HORIZONTAL);
     }else  SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), NULL, &this->coordinates->destRect, this->gameState->rotationAngle, NULL, SDL_FLIP_NONE);
 }
