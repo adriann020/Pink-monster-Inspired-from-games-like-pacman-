@@ -15,7 +15,7 @@ struct ClientFixes {
 
 };
 
-struct GameState { 
+struct PlayerState { 
   
   float speed = 3.5; // Char
   float rotationAngle = 0; // (not used yet)
@@ -24,10 +24,10 @@ struct GameState {
   bool fix = false; // Char (0 left/1 right)
   bool doubletexturefix = false; // Fixed char double texture 
 
-  
-  bool stopmenumusic = false; // Stop menu music
-  bool turntextcont = false; // Continue text effect
+};
 
+struct EffectState {
+  bool turntextcont = false; // Continue text effect
 };
 
 struct NpcState {
@@ -140,6 +140,7 @@ struct Music {
    Uint32 wave_soundlenCoin;
 
    const int SDL_AUDIO_DEVICE_DEFAULT_OUTPUT = 0xFFFFFFFF;
+   bool stopmenumusic = false; // Stop menu music
 
 };
 
