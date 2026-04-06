@@ -18,19 +18,22 @@ struct ClientFixes {
 struct GameState { 
   
   float speed = 3.5; // Char
-  float speed2 = 4; // Npcs
   float rotationAngle = 0; // (not used yet)
   float imgWidth = 1000, imgHeight = 1000; // char (not used)
   
-  bool fix = false; // Char (left/right)
+  bool fix = false; // Char (0 left/1 right)
   bool doubletexturefix = false; // Fixed char double texture 
 
   
   bool stopmenumusic = false; // Stop menu music
   bool turntextcont = false; // Continue text effect
 
+};
 
-  //------------------ For NPCS Movement
+struct NpcState {
+
+  // For NPCS Movement
+  float speed2 = 4; // Npcs
 
   bool turn = false; // right Npc owl
   bool turn2 = false; // up Npc owl
@@ -42,12 +45,9 @@ struct GameState {
   bool turnb3 = false; // left Npc blue
   bool turnb4 = false; // down Npc blue
 
-   //------------------
-
+  // Left-Right direction for sprites
   SDL_FlipMode flip = SDL_FLIP_NONE; // Npc owl
   SDL_FlipMode flipBlue = SDL_FLIP_NONE; // Npc blue
-
-
 };
 
 struct InputState {
@@ -142,5 +142,4 @@ struct Music {
    const int SDL_AUDIO_DEVICE_DEFAULT_OUTPUT = 0xFFFFFFFF;
 
 };
-
 
