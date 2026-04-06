@@ -166,8 +166,8 @@ void DataEngine::MovementChar() {
 
     int keysPressed = up + down + left + right;
 
-    float movement = this->gameState->speed * (deltaTime / 16); // 60 fps
-    float knockbackAmount = this->gameState->speed * (deltaTime / 16); // Knockback char - walls
+    float movement = this->playerState->speed * (deltaTime / 16); // 60 fps
+    float knockbackAmount = this->playerState->speed * (deltaTime / 16); // Knockback char - walls
     
 
     // Reduces movement speed when multiple keys are pressed to prevent faster diagonal movement
@@ -209,7 +209,7 @@ void DataEngine::MovementChar() {
     // fixed double texture bug
     if (up && right) { // diagonals
         
-        this->gameState->doubletexturefix = true;
+        this->playerState->doubletexturefix = true;
 
         if(this->coordinates->destRect.y <= 30){ // up block
             this->coordinates->destRect.y += 4;
@@ -221,7 +221,7 @@ void DataEngine::MovementChar() {
 
         this->coordinates->destRect.x += movement;
         this->coordinates->destRect.y -= movement;
-        this->gameState->fix = false;
+        this->playerState->fix = false;
 
         this->coordinates->srcrect.x = sprite * 32;        
         this->coordinates->srcrect.y = 0;
@@ -242,7 +242,7 @@ void DataEngine::MovementChar() {
 
     }else if(up && left) {
             
-            this->gameState->doubletexturefix = true;
+            this->playerState->doubletexturefix = true;
     
             if(this->coordinates->destRect.y <= 30){ // up block
                 this->coordinates->destRect.y += 4;
@@ -254,7 +254,7 @@ void DataEngine::MovementChar() {
     
             this->coordinates->destRect.x -= movement;
             this->coordinates->destRect.y -= movement;
-            this->gameState->fix = true;
+            this->playerState->fix = true;
     
             this->coordinates->srcrect.x = sprite * 32;        
             this->coordinates->srcrect.y = 0;
@@ -275,7 +275,7 @@ void DataEngine::MovementChar() {
 
     }else if (down && right) {
             
-            this->gameState->doubletexturefix = true;
+            this->playerState->doubletexturefix = true;
     
             if(this->coordinates->destRect.y > 730){ // down block
                 this->coordinates->destRect.y -= 4;
@@ -287,7 +287,7 @@ void DataEngine::MovementChar() {
     
             this->coordinates->destRect.x += movement;
             this->coordinates->destRect.y += movement;
-            this->gameState->fix = false;
+            this->playerState->fix = false;
     
             this->coordinates->srcrect.x = sprite * 32;        
             this->coordinates->srcrect.y = 0;
@@ -308,7 +308,7 @@ void DataEngine::MovementChar() {
             
     }else if(down && left) {
             
-            this->gameState->doubletexturefix = true;
+            this->playerState->doubletexturefix = true;
     
             if(this->coordinates->destRect.y > 730){ // down block
                 this->coordinates->destRect.y -= 4;
@@ -320,7 +320,7 @@ void DataEngine::MovementChar() {
     
             this->coordinates->destRect.x -= movement;
             this->coordinates->destRect.y += movement;
-            this->gameState->fix = true;
+            this->playerState->fix = true;
     
             this->coordinates->srcrect.x = sprite * 32;        
             this->coordinates->srcrect.y = 0;
@@ -339,25 +339,25 @@ void DataEngine::MovementChar() {
 
             SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect, 0 , NULL , SDL_FLIP_HORIZONTAL); // char updated
 
-    }else this->gameState->doubletexturefix = false;
+    }else this->playerState->doubletexturefix = false;
 
 
     // up
-    if (up && this->coordinates->destRect.y - movement >= 0 && this->gameState->doubletexturefix == false) { 
+    if (up && this->coordinates->destRect.y - movement >= 0 && this->playerState->doubletexturefix == false) { 
 
         if(this->coordinates->destRect.y <= 30){
             this->coordinates->destRect.y += knockbackAmount;
         }
 
         this->coordinates->destRect.y -= movement;
-        this->gameState->rotationAngle = 0;
+        this->playerState->rotationAngle = 0;
 
         this->coordinates->srcrect.x = sprite * 32;        
         this->coordinates->srcrect.y = 0;
         this->coordinates->srcrect.w = 32;
         this->coordinates->srcrect.h = 64;
 
-        if(this->gameState->fix == true) {
+        if(this->playerState->fix == true) {
           
           if(this->init_texture->get_imageTextureChar()) {
               SDL_DestroyTexture(this->init_texture->get_imageTextureChar());
@@ -386,21 +386,21 @@ void DataEngine::MovementChar() {
     }
 
     // down
-    if (down && this->coordinates->destRect.y + this->coordinates->destRect.h + movement <= HEIGHT && this->gameState->doubletexturefix == false) { 
+    if (down && this->coordinates->destRect.y + this->coordinates->destRect.h + movement <= HEIGHT && this->playerState->doubletexturefix == false) { 
 
         if(this->coordinates->destRect.y > 730){
             this->coordinates->destRect.y -= knockbackAmount;
         }
 
         this->coordinates->destRect.y += movement;
-        this->gameState->rotationAngle = 0;
+        this->playerState->rotationAngle = 0;
 
         this->coordinates->srcrect.x = sprite * 32;       
         this->coordinates->srcrect.y = 0;
         this->coordinates->srcrect.w = 32;
         this->coordinates->srcrect.h = 64;
 
-        if(this->gameState->fix == false){
+        if(this->playerState->fix == false){
 
            if (this->init_texture->get_imageTextureChar()) {
                 SDL_DestroyTexture(this->init_texture->get_imageTextureChar());
@@ -428,15 +428,15 @@ void DataEngine::MovementChar() {
     }
 
     // left
-    if (left && this->coordinates->destRect.x - movement >= 0 && this->gameState->doubletexturefix == false) { 
+    if (left && this->coordinates->destRect.x - movement >= 0 && this->playerState->doubletexturefix == false) { 
 
         if(this->coordinates->destRect.x <= 10){
             this->coordinates->destRect.x += knockbackAmount;
         }
 
         this->coordinates->destRect.x -= movement;
-        this->gameState->rotationAngle = 0;
-        this->gameState->fix = true;
+        this->playerState->rotationAngle = 0;
+        this->playerState->fix = true;
 
         this->coordinates->srcrect.x = sprite * 32;       
         this->coordinates->srcrect.y = 0;
@@ -457,15 +457,15 @@ void DataEngine::MovementChar() {
     }
 
     // right
-    if (right && this->coordinates->destRect.x + this->coordinates->destRect.w + movement <= WIDTH && this->gameState->doubletexturefix == false) { 
+    if (right && this->coordinates->destRect.x + this->coordinates->destRect.w + movement <= WIDTH && this->playerState->doubletexturefix == false) { 
 
         if(this->coordinates->destRect.x >= 1211){
             this->coordinates->destRect.x -= knockbackAmount;
         }
 
         this->coordinates->destRect.x += movement;
-        this->gameState->rotationAngle = 0;
-        this->gameState->fix = false;
+        this->playerState->rotationAngle = 0;
+        this->playerState->fix = false;
 
         this->coordinates->srcrect.x = sprite * 32;        
         this->coordinates->srcrect.y = 0;
@@ -578,7 +578,7 @@ void DataEngine::YouLost() {
 
         SDL_RenderTexture(renderer, this->init_texture->get_imageTextureStartOver(), NULL, &this->coordinates->StartOverRect); // peste render gameovermap sa se vada
 
-        this->gameState->speed = 0; // char
+        this->playerState->speed = 0; // char
         this->npcState->speed2 = 0; // npc
         
     }else this->uiState->startover = false;
@@ -594,7 +594,7 @@ void DataEngine::StartOver() {
 
     if(this->uiState->startover == true) {
 
-        this->gameState->speed = 3.5; // char original var
+        this->playerState->speed = 3.5; // char original var
         this->npcState->speed2 = 4; // npc original var
     
         this->coordinates->destRect.x = 26;   // char original var
