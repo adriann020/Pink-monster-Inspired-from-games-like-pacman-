@@ -59,7 +59,7 @@ void DataEngine::MoveNPC() {
         npcRect.y -= speed2;
     }*/
 
-    float movement = this->gameState->speed2 * (deltaTime / 16); 
+    float movement = this->npcState->speed2 * (deltaTime / 16); 
 
     // Owl NPC
     this->coordinates->srcrect2.x = sprite2 * 32;        
@@ -67,44 +67,44 @@ void DataEngine::MoveNPC() {
     this->coordinates->srcrect2.w = 32;
     this->coordinates->srcrect2.h = 64;
 
-    if(this->coordinates->npcRect.x != 1219 && this->gameState->turn == false) {
+    if(this->coordinates->npcRect.x != 1219 && this->npcState->turn == false) {
         this->coordinates->npcRect.x += movement;
-        RenderNPC(renderer, this->init_texture->get_imageTextureNPC(), this->coordinates->srcrect2 ,this->coordinates->npcRect, this->gameState->flip); // rendernpc
+        RenderNPC(renderer, this->init_texture->get_imageTextureNPC(), this->coordinates->srcrect2 ,this->coordinates->npcRect, this->npcState->flip); // rendernpc
         if(this->coordinates->npcRect.x >= 1219){
-            this->gameState->turn = true; this->gameState->flip = SDL_FLIP_HORIZONTAL; sprite2 = 0; // release
-            this->gameState->turn4 = false;
+            this->npcState->turn = true; this->npcState->flip = SDL_FLIP_HORIZONTAL; sprite2 = 0; // release
+            this->npcState->turn4 = false;
         } 
     }
 
-    if(this->gameState->turn == true && this->gameState->turn2  == false) {
+    if(this->npcState->turn == true && this->npcState->turn2  == false) {
         this->coordinates->npcRect.y -= movement;
-        RenderNPC(renderer, this->init_texture->get_imageTextureNPC(), this->coordinates->srcrect2 ,this->coordinates->npcRect, this->gameState->flip); // rendernpc
+        RenderNPC(renderer, this->init_texture->get_imageTextureNPC(), this->coordinates->srcrect2 ,this->coordinates->npcRect, this->npcState->flip); // rendernpc
         if(this->coordinates->npcRect.y <= 70){
-            this->gameState->turn2 = true;  sprite2 = 0; // release
+            this->npcState->turn2 = true;  sprite2 = 0; // release
         }
     }
 
-    if(this->gameState->turn2 == true && this->gameState->turn3 == false) {
+    if(this->npcState->turn2 == true && this->npcState->turn3 == false) {
         this->coordinates->npcRect.x -= movement;
-        RenderNPC(renderer, this->init_texture->get_imageTextureNPC(), this->coordinates->srcrect2 ,this->coordinates->npcRect, this->gameState->flip); // rendernpc
+        RenderNPC(renderer, this->init_texture->get_imageTextureNPC(), this->coordinates->srcrect2 ,this->coordinates->npcRect, this->npcState->flip); // rendernpc
         if(this->coordinates->npcRect.x <= 10){
-            this->gameState->turn3 = true; this->gameState->flip = SDL_FLIP_NONE; sprite2 = 0; // release
+            this->npcState->turn3 = true; this->npcState->flip = SDL_FLIP_NONE; sprite2 = 0; // release
         }
     }
 
-    if(this->gameState->turn3 == true && this->gameState->turn4 == false) {
+    if(this->npcState->turn3 == true && this->npcState->turn4 == false) {
         this->coordinates->npcRect.y += movement;
-        RenderNPC(renderer, this->init_texture->get_imageTextureNPC(), this->coordinates->srcrect2 ,this->coordinates->npcRect, this->gameState->flip); // rendernpc
+        RenderNPC(renderer, this->init_texture->get_imageTextureNPC(), this->coordinates->srcrect2 ,this->coordinates->npcRect, this->npcState->flip); // rendernpc
         if(this->coordinates->npcRect.y >= 300){
-            this->gameState->turn4 = true; sprite2 = 0; // release  
+            this->npcState->turn4 = true; sprite2 = 0; // release  
         }
     }
 
-    if(this->gameState->turn4 == true) { // Reset
-        this->gameState->turn = false;
-        this->gameState->turn2 = false;
-        this->gameState->turn3 = false;
-        this->gameState->turn4 = false;
+    if(this->npcState->turn4 == true) { // Reset
+        this->npcState->turn = false;
+        this->npcState->turn2 = false;
+        this->npcState->turn3 = false;
+        this->npcState->turn4 = false;
     }
     
     // Blue NPC
@@ -113,44 +113,44 @@ void DataEngine::MoveNPC() {
     this->coordinates->srcrect3.w = 32;
     this->coordinates->srcrect3.h = 64;
 
-    if(this->coordinates->blueNpcRect.x != 1219 && this->gameState->turnb == false) {
+    if(this->coordinates->blueNpcRect.x != 1219 && this->npcState->turnb == false) {
         this->coordinates->blueNpcRect.x += movement;
-        RenderNPC(renderer, this->init_texture->get_imageTextureBlueNPC(), this->coordinates->srcrect3 ,this->coordinates->blueNpcRect, this->gameState->flipBlue); // rendernpc
+        RenderNPC(renderer, this->init_texture->get_imageTextureBlueNPC(), this->coordinates->srcrect3 ,this->coordinates->blueNpcRect, this->npcState->flipBlue); // rendernpc
         if(this->coordinates->blueNpcRect.x >= 1219){
-            this->gameState->turnb = true; this->gameState->flipBlue = SDL_FLIP_HORIZONTAL; sprite3 = 0; // release
-            this->gameState->turnb4 = false;
+            this->npcState->turnb = true; this->npcState->flipBlue = SDL_FLIP_HORIZONTAL; sprite3 = 0; // release
+            this->npcState->turnb4 = false;
         } 
     }
 
-    if(this->gameState->turnb == true && this->gameState->turnb2  == false) {
+    if(this->npcState->turnb == true && this->npcState->turnb2  == false) {
         this->coordinates->blueNpcRect.y -= movement;
-        RenderNPC(renderer, this->init_texture->get_imageTextureBlueNPC(), this->coordinates->srcrect3 ,this->coordinates->blueNpcRect, this->gameState->flipBlue); // rendernpc
+        RenderNPC(renderer, this->init_texture->get_imageTextureBlueNPC(), this->coordinates->srcrect3 ,this->coordinates->blueNpcRect, this->npcState->flipBlue); // rendernpc
         if(this->coordinates->blueNpcRect.y <= 385){
-            this->gameState->turnb2 = true;  sprite3 = 0; // release
+            this->npcState->turnb2 = true;  sprite3 = 0; // release
         }
     }   
 
-    if(this->gameState->turnb2 == true && this->gameState->turnb3 == false) {
+    if(this->npcState->turnb2 == true && this->npcState->turnb3 == false) {
         this->coordinates->blueNpcRect.x -= movement;
-        RenderNPC(renderer, this->init_texture->get_imageTextureBlueNPC(), this->coordinates->srcrect3 ,this->coordinates->blueNpcRect, this->gameState->flipBlue); // rendernpc
+        RenderNPC(renderer, this->init_texture->get_imageTextureBlueNPC(), this->coordinates->srcrect3 ,this->coordinates->blueNpcRect, this->npcState->flipBlue); // rendernpc
         if(this->coordinates->blueNpcRect.x <= 10){
-            this->gameState->turnb3 = true; this->gameState->flipBlue = SDL_FLIP_NONE; sprite3 = 0; // release
+            this->npcState->turnb3 = true; this->npcState->flipBlue = SDL_FLIP_NONE; sprite3 = 0; // release
         }
     }
 
-    if(this->gameState->turnb3 == true && this->gameState->turnb4 == false) {
+    if(this->npcState->turnb3 == true && this->npcState->turnb4 == false) {
         this->coordinates->blueNpcRect.y += movement;
-        RenderNPC(renderer, this->init_texture->get_imageTextureBlueNPC(), this->coordinates->srcrect3 ,this->coordinates->blueNpcRect, this->gameState->flipBlue); // rendernpc
+        RenderNPC(renderer, this->init_texture->get_imageTextureBlueNPC(), this->coordinates->srcrect3 ,this->coordinates->blueNpcRect, this->npcState->flipBlue); // rendernpc
         if(this->coordinates->blueNpcRect.y >= 640){
-            this->gameState->turnb4 = true; sprite3 = 0; // release  
+            this->npcState->turnb4 = true; sprite3 = 0; // release  
         }
     }
 
-    if(this->gameState->turnb4 == true) { // Reset
-        this->gameState->turnb = false;
-        this->gameState->turnb2 = false;
-        this->gameState->turnb3 = false;
-        this->gameState->turnb4 = false;
+    if(this->npcState->turnb4 == true) { // Reset
+        this->npcState->turnb = false;
+        this->npcState->turnb2 = false;
+        this->npcState->turnb3 = false;
+        this->npcState->turnb4 = false;
     }
     
 }
@@ -579,7 +579,7 @@ void DataEngine::YouLost() {
         SDL_RenderTexture(renderer, this->init_texture->get_imageTextureStartOver(), NULL, &this->coordinates->StartOverRect); // peste render gameovermap sa se vada
 
         this->gameState->speed = 0; // char
-        this->gameState->speed2 = 0; // npc
+        this->npcState->speed2 = 0; // npc
         
     }else this->uiState->startover = false;
     
@@ -595,7 +595,7 @@ void DataEngine::StartOver() {
     if(this->uiState->startover == true) {
 
         this->gameState->speed = 3.5; // char original var
-        this->gameState->speed2 = 4; // npc original var
+        this->npcState->speed2 = 4; // npc original var
     
         this->coordinates->destRect.x = 26;   // char original var
         this->coordinates->destRect.y = 550;
