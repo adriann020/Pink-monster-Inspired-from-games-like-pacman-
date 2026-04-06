@@ -57,7 +57,7 @@ class InitTextures {
         Surface *imageSurfaceForWalls; // walls
 
         Texture *imageTextureChar; // char 
-        Texture *imageTextureMap; // mapa
+        Texture *imageTextureMap; // map
         Texture *imageTextureFightmap; // fightmap
         Texture *imageTexturePlay; // play
         Texture *imageTextureGameOverMap; // gameovermap
