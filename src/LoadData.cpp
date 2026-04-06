@@ -267,13 +267,13 @@ void DataEngine::forCoordinates() {
 
 void DataEngine::forMusic() { 
 
-    SDL_LoadWAV("soundsandmusic/formenu2.wav", &wave_spec, &wave_sound, &wave_soundlen);
-    SDL_LoadWAV("soundsandmusic/coin.wav", &wave_specCoin, &wave_soundCoin, &wave_soundlenCoin);
+    SDL_LoadWAV("soundsandmusic/formenu2.wav", &musicState->wave_spec, &musicState->wave_sound, &musicState->wave_soundlen);
+    SDL_LoadWAV("soundsandmusic/coin.wav", &musicState->wave_specCoin, &musicState->wave_soundCoin, &musicState->wave_soundlenCoin);
 
-    this->init_sound->get_streamMenu() = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &wave_spec, nullptr, nullptr);
-    this->init_sound->get_streamCoin() = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &wave_specCoin, nullptr, nullptr);
+    this->init_sound->get_streamMenu() = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &musicState->wave_spec, nullptr, nullptr);
+    this->init_sound->get_streamCoin() = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &musicState->wave_specCoin, nullptr, nullptr);
 
-    SDL_PutAudioStreamData(this->init_sound->get_streamMenu(), wave_sound, wave_soundlen); // Loaded already here
+    SDL_PutAudioStreamData(this->init_sound->get_streamMenu(), musicState->wave_sound, musicState->wave_soundlen); // Loaded already here
 
 }
 
@@ -317,8 +317,14 @@ void DataEngine::deleteObjects(){
     this->score = nullptr; // pointer for score
     delete this->pak; // pointer for pak
     this->pak = nullptr; // pointer for pak
-    delete this->gameState; // pointer for game state
-    this->gameState = nullptr; // pointer for game state
+    delete this->playerState; // pointer for game state
+    this->playerState = nullptr; // pointer for game state
+    delete this->npcState; // pointer for npc state
+    this->npcState = nullptr; // pointer for npc state
+    delete this->effectState; // pointer for effect state
+    this->effectState = nullptr; // pointer for effect state
+    delete this->musicState; // pointer for music state
+    this->musicState = nullptr; // pointer for music state
     delete this->uiState; // pointer for UI state
     this->uiState = nullptr; // pointer for UI state
     delete this->inputState; // pointer for input state
