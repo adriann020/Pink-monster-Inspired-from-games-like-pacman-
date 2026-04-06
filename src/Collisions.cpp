@@ -13,7 +13,7 @@ void DataEngine::AllCollisionsAndScore() {
         this->coordinates->coin0Rect.y = rand() % (HEIGHT-100);
         
         SDL_ClearAudioStream(this->init_sound->get_streamCoin()); // Clear buffer (streamcoin's data)
-        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), wave_soundCoin, wave_soundlenCoin); // Load stream data
+        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
     
     }else if (CollisionCoins(this->coordinates->coin1Rect, this->coordinates->destRect) == 1){
@@ -25,7 +25,7 @@ void DataEngine::AllCollisionsAndScore() {
         this->coordinates->coin1Rect.y = rand() % (HEIGHT-100);
 
         SDL_ClearAudioStream(this->init_sound->get_streamCoin()); // Clear buffer (streamcoin's data)
-        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), wave_soundCoin, wave_soundlenCoin); // Load stream data 
+        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data 
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
 
     }else if (CollisionCoins(this->coordinates->coin2Rect, this->coordinates->destRect) == 1){
@@ -37,7 +37,7 @@ void DataEngine::AllCollisionsAndScore() {
         this->coordinates->coin2Rect.y = rand() % (HEIGHT-100);
 
         SDL_ClearAudioStream(this->init_sound->get_streamCoin()); // Clear buffer (streamcoin's data)
-        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), wave_soundCoin, wave_soundlenCoin); // Load stream data
+        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
 
     }else if (CollisionCoins(this->coordinates->coin3Rect, this->coordinates->destRect) == 1){
@@ -49,7 +49,7 @@ void DataEngine::AllCollisionsAndScore() {
         this->coordinates->coin3Rect.y = rand() % (HEIGHT-100);
 
         SDL_ClearAudioStream(this->init_sound->get_streamCoin()); // Clear buffer (streamcoin's data)
-        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), wave_soundCoin, wave_soundlenCoin); // Load stream data
+        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
 
     }else if (CollisionCoins(this->coordinates->coin4Rect, this->coordinates->destRect) == 1){
@@ -61,7 +61,7 @@ void DataEngine::AllCollisionsAndScore() {
         this->coordinates->coin4Rect.y = rand() % (HEIGHT-100);
 
         SDL_ClearAudioStream(this->init_sound->get_streamCoin()); // Clear buffer (streamcoin's data)
-        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), wave_soundCoin, wave_soundlenCoin); // Load stream data
+        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
 
     }else if (CollisionCoins(this->coordinates->coin5Rect, this->coordinates->destRect) == 1){
@@ -72,7 +72,7 @@ void DataEngine::AllCollisionsAndScore() {
         this->coordinates->coin5Rect.y = rand() % (HEIGHT-100);
         
         SDL_ClearAudioStream(this->init_sound->get_streamCoin()); // Clear buffer (streamcoin's data)
-        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), wave_soundCoin, wave_soundlenCoin); // Load stream data
+        SDL_PutAudioStreamData(this->init_sound->get_streamCoin(), this->musicState->wave_soundCoin, this->musicState->wave_soundlenCoin); // Load stream data
         SDL_ResumeAudioStreamDevice(this->init_sound->get_streamCoin()); // Play the sound (which is in a paused state)
     }
 
