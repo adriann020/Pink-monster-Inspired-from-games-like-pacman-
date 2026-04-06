@@ -1,5 +1,4 @@
 #include <iostream>
-#include "headers/List.h"
 #include "headers/Comp.h"
 #include <SDL3_ttf/SDL_ttf.h>
 #include <SDL3/SDL.h> 
