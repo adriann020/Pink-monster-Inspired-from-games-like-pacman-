@@ -1,6 +1,4 @@
 #include "headers/Comp.h"
-#include "headers/List.h"
-#include <iostream>
 
 
 void DataEngine::MoveTextContinue() {
