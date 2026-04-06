@@ -12,19 +12,19 @@ void DataEngine::RenderCharacter() {  //Char unused
     SDL_RenderTexture(renderer, this->init_texture->get_imageTextureChar(), NULL, &this->coordinates->destRect);
 }
 
-//----------------------------------------------------------------------------------- RenderNPC
+// RenderNPC
 
 void DataEngine::RenderNPC(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &srcreect ,SDL_FRect &coord, SDL_FlipMode &flip){
     SDL_RenderTextureRotated(rend, texture, &srcreect, &coord, 0, NULL, flip);
 }
 
-//----------------------------------------------------------------------------------- RenderImportantThings
+// RenderImportantThings
 
 void DataEngine::RenderImportantThings(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &coord) {
     SDL_RenderTexture(rend, texture, NULL, &coord); 
 }
 
-//----------------------------------------------------------------------------------- RenderCoin
+// RenderCoin
 
 void DataEngine::RenderCoin(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &coord) {
     SDL_RenderTexture(rend, texture, NULL , &coord);
