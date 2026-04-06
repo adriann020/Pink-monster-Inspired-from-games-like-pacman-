@@ -50,7 +50,7 @@ void DataEngine::forClient() {
         MoveTextContinue(); // Move text continue
         
         // MenuMusic
-        if(this->gameState->stopmenumusic == false){
+        if(musicState->stopmenumusic == false){
             MenuMusic(); // [ON]
         }
 
@@ -58,7 +58,7 @@ void DataEngine::forClient() {
         if (this->uiState->play == true) {
         
             this->uiState->changeMap = true;
-            this->gameState->stopmenumusic = true;
+            musicState->stopmenumusic = true;
 
             SDL_DestroyTexture(this->init_texture->get_imageTexturePlay()); // Play
             SDL_DestroyTexture(this->init_texture->get_imageTextureMap()); // Map1
