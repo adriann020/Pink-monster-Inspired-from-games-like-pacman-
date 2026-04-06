@@ -4,7 +4,6 @@
 #include <SDL3/SDL.h> 
 #include <fstream>
 #include <Windows.h>
-// -mwindows
 
 extern void execute(); // makepak.cpp
 
