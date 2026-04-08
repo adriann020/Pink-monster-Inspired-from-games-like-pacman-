@@ -61,7 +61,7 @@ class DataEngine : public AnimationState, public Text, public ClientFixes {
         void MoveNPC(); // Move the NPC (rendernpc inside)
         void AllCollisionsAndScore(); // Update score si collisions
      
-        // Sfarsit
+        // End
         void ClearRenderer();
         void ClearWindow();
         void QuitTTF_And_SDL();
