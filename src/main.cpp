@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
     //execute();
 
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO); // Video, audio
-    TTF_Init();
+    TTF_Init(); // Texts
  
     DataEngine *engine = new DataEngine; // Startup
 
