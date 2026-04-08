@@ -1,6 +1,4 @@
 #include "headers/Comp.h"
-#include <fstream>
-#include <unistd.h>
 
 void DataEngine::forClient() {
 
