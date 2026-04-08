@@ -2,7 +2,6 @@
 #include "headers/Comp.h"
 #include <SDL3_ttf/SDL_ttf.h>
 #include <SDL3/SDL.h> 
-#include <fstream>
 #include <Windows.h>
 
 extern void execute(); // makepak.cpp
