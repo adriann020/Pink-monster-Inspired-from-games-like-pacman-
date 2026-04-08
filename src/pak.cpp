@@ -1,7 +1,7 @@
 #include "pak.h"
 #include <cstring>
 
-// (static void crypt si in makepak.cpp)
+// (static void crypt in makepak.cpp)
 static void crypt(std::vector<char>& data) {
     for (char& b : data)
         b ^= 0xA7;
