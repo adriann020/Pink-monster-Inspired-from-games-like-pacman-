@@ -52,11 +52,6 @@ struct NpcState {
 
 struct InputState {
   const bool *state = SDL_GetKeyboardState(NULL);
-  bool up = false;
-  bool down = false;
-  bool left = false;
-  bool right = false;
-
 };
 
 struct UIState {
