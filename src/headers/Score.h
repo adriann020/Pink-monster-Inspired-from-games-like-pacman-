@@ -1,7 +1,7 @@
 
 #pragma once
 
-class  ScoreAndMore {
+class  Score {
 
   private:
 
