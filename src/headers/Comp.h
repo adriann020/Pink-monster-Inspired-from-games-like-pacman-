@@ -117,7 +117,7 @@ class DataEngine : public AnimationState, public Text, public ClientFixes {
         SDL_Event event;
 
         //For score
-        ScoreAndMore *score = new ScoreAndMore; 
+        Score *score = new Score; 
         //For assets
         Pak *pak = new Pak; 
         //For game state
