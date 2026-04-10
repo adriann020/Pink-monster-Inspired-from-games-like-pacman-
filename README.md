@@ -1,1 +1,1 @@
-# Pink-monster-Inspired-from-games-like-pacman-
+# Pink-Monster-Inspired-from-games-like-pacman-
