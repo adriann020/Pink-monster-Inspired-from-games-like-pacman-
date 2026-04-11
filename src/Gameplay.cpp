@@ -1,4 +1,4 @@
-#include "headers/Comp.h"
+#include "headers/GameManager.h"
 
 // Everything below is running on loop in client -> Client.cpp !!!
 
