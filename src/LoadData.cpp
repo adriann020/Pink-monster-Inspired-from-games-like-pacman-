@@ -5,7 +5,7 @@
 #include <fstream>
 #include <string>
 
-void DataEngine::forWindow() { 
+void GameManager::forWindow() { 
     
     std::ofstream file("../data/logs.txt", std::ios::app);
 
@@ -47,7 +47,7 @@ void DataEngine::forWindow() {
 
 }
 
-SDL_Surface* DataEngine::LoadSurfaceFromPak( Pak *pak,  const std::string& path) {
+SDL_Surface* GameManager::LoadSurfaceFromPak( Pak *pak,  const std::string& path) {
 
     auto bytes = pak->read(path);
 
@@ -77,7 +77,7 @@ void DataEngine::forRenderer(){
     SDL_SetRenderVSync(renderer, 1); // smooth animations
 }
 
-void DataEngine::LoadTexture() {
+void GameManager::LoadTexture() {
 
     
     auto CreateTextureAndDestroySurface = [&](SDL_Surface*& surface) -> SDL_Texture* {
@@ -157,7 +157,7 @@ void DataEngine::LoadTexture() {
     SDL_DestroySurface(this->init_texture->get_imageSurfaceTexts());
 }
 
-void DataEngine::forCoordinates() {
+void GameManager::forCoordinates() {
 
     // ---------------- Main ----------------
 
@@ -265,7 +265,7 @@ void DataEngine::forCoordinates() {
 
 }
 
-void DataEngine::forMusic() { 
+void GameManager::forMusic() { 
 
     SDL_LoadWAV("soundsandmusic/formenu2.wav", &musicState->wave_spec, &musicState->wave_sound, &musicState->wave_soundlen);
     SDL_LoadWAV("soundsandmusic/coin.wav", &musicState->wave_specCoin, &musicState->wave_soundCoin, &musicState->wave_soundlenCoin);
@@ -279,27 +279,27 @@ void DataEngine::forMusic() {
 
 
 //-----------------------------------------------  Important
-void DataEngine::SetRenderColor() {
+void GameManager::SetRenderColor() {
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); 
 }
 
-void DataEngine::RenderClear() {
+void GameManager::RenderClear() {
     SDL_RenderClear(renderer);
 }
 
-void DataEngine::RenderPresent() {
+void GameManager::RenderPresent() {
     SDL_RenderPresent(renderer);
 }
 //------------------------------------------------
 
-void DataEngine::ClearRenderer() {
+void GameManager::ClearRenderer() {
     if (renderer) {
         SDL_DestroyRenderer(renderer);
         renderer = nullptr;
     }
 }
 
-void DataEngine::ClearWindow() {
+void GameManager::ClearWindow() {
 
     window_closed.open("../data/logs.txt", std::ios::app);
     window_closed << "[SYSTEM] -> The game has been closed successfully." << std::endl;
@@ -312,7 +312,7 @@ void DataEngine::ClearWindow() {
     }
 }
 
-void DataEngine::deleteObjects(){
+void GameManager::deleteObjects(){
     delete this->score; // pointer for score
     this->score = nullptr; // pointer for score
     delete this->pak; // pointer for pak
@@ -338,7 +338,7 @@ void DataEngine::deleteObjects(){
     this->init_sound = nullptr; // pointer for sounds
 }
 
-void DataEngine::QuitTTF_And_SDL() {
+void GameManager::QuitTTF_And_SDL() {
     TTF_Quit();
     SDL_Quit();
 }
