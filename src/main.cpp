@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO); // Video, audio
     TTF_Init(); // Texts
  
-    DataEngine *engine = new DataEngine; // Startup
+    GameManager *startGame = new GameManager; // Startup
 
     HANDLE mutex = CreateMutex(NULL, TRUE, "MyUniqueAppMutexName"); // Just one client 
     if (GetLastError() == ERROR_ALREADY_EXISTS) {
@@ -28,11 +28,11 @@ int main(int argc, char** argv) {
     //------------------------------------------------------------
 
     // Client
-    engine->forClient();
+    startGame->forClient();
 
     ReleaseMutex(mutex);
 
-    delete engine; // Cleanup (end)
+    delete startGame; // Cleanup (end)
 
     return 0;
 }
