@@ -13,7 +13,7 @@ using Surface = SDL_Surface; // For surfaces
 using Texture = SDL_Texture; // For textures
 
 
-class DataEngine : public AnimationState, public Text, public ClientFixes {
+class GameManager : public AnimationState, public Text, public ClientFixes {
 
     public:     
 
