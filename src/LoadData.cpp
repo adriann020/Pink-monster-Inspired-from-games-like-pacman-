@@ -72,7 +72,7 @@ SDL_Surface* GameManager::LoadSurfaceFromPak( Pak *pak,  const std::string& path
     return surface;
 } 
 
-void DataEngine::forRenderer(){
+void GameManager::forRenderer(){
     renderer = SDL_CreateRenderer(window, NULL);
     SDL_SetRenderVSync(renderer, 1); // smooth animations
 }
