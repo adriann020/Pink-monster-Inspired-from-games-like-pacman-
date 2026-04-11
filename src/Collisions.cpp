@@ -1,7 +1,7 @@
 #include "headers/Comp.h"
 
 // Collisions and score increment (CollisionNPC in ResetScore and CollisionWALL in MovementChar -> both in Gameplay.cpp)
-void DataEngine::AllCollisionsAndScore() { 
+void GameManager::AllCollisionsAndScore() { 
 
     // Coins-Char
     if(CollisionCoins(this->coordinates->coin0Rect, this->coordinates->destRect) == 1){
