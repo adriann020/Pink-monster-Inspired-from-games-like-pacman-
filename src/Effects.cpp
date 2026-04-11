@@ -1,6 +1,6 @@
 #include "headers/Comp.h"
 
-void DataEngine::MoveTextContinue() {
+void GameManager::MoveTextContinue() {
 
     float speedText = 0.8 * (deltaTime / 16); 
 
