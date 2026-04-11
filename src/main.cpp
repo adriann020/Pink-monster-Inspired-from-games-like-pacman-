@@ -1,5 +1,5 @@
 #include <iostream>
-#include "headers/Comp.h"
+#include "headers/GameManager.h"
 #include <SDL3_ttf/SDL_ttf.h>
 #include <SDL3/SDL.h> 
 #include <Windows.h>
