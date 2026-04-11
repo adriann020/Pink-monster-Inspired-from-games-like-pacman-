@@ -62,7 +62,7 @@ SDL_Surface* GameManager::LoadSurfaceFromPak( Pak *pak,  const std::string& path
         return nullptr;
     }
 
-    SDL_Surface* surface = SDL_LoadBMP_IO(io, true); //  SDL3 corect
+    SDL_Surface* surface = SDL_LoadBMP_IO(io, true); 
 
     if(!surface) {
         SDL_Log("SDL_LoadBMP_IO failed: %s", SDL_GetError());
