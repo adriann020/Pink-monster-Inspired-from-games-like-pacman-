@@ -1,6 +1,6 @@
 #include "headers/Comp.h"
 
-void DataEngine::forClient() {
+void GameManager::forClient() {
 
     bool run = true;
     while (run) {
