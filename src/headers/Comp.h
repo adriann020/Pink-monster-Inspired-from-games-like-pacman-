@@ -18,7 +18,7 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
     public:     
 
         // Startup
-        DataEngine () {
+        GameManager () {
            forWindow();
            forRenderer();
            forCoordinates();
@@ -27,7 +27,7 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
         }
 
         // Cleanup (end)
-        ~DataEngine () { 
+        ~GameManager () { 
             deleteObjects();
             ClearRenderer();
             ClearWindow();
