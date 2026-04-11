@@ -3,7 +3,7 @@
 // Everything below is running on loop in client -> Client.cpp !!!
 
 //Update score  
-void DataEngine::updateScore() {
+void GameManager::updateScore() {
 
     showscore = this->score->getScore(); 
 
@@ -21,7 +21,7 @@ void DataEngine::updateScore() {
 }
 
 //Reset score
-void DataEngine::ResetScore(){
+void GameManager::ResetScore(){
     if(CollisionNPC(this->coordinates->destRect, this->coordinates->npcRect) == 1 || CollisionNPC(this->coordinates->destRect, this->coordinates->blueNpcRect) == 1){
 
         this->uiState->showLOST = true; // Verifies collision with NPCs
@@ -41,7 +41,7 @@ void DataEngine::ResetScore(){
 }
 
 //NPC Movement
-void DataEngine::MoveNPC() {
+void GameManager::MoveNPC() {
 
     /*if (npcRect.x < destRect.x) { // npc follows char
         npcRect.x += speed2;
@@ -156,7 +156,7 @@ void DataEngine::MoveNPC() {
 }
 
 //CHAR Movement
-void DataEngine::MovementChar() {
+void GameManager::MovementChar() {
 
     // Getting input everytime
     bool const up = this->inputState->state[SDL_SCANCODE_W];
@@ -556,7 +556,7 @@ void DataEngine::MovementChar() {
 }
 
 //Loss
-void DataEngine::YouLost() {
+void GameManager::YouLost() {
 
     if(this->uiState->showLOST == true){
 
@@ -586,7 +586,7 @@ void DataEngine::YouLost() {
 }
 
 //StartOver
-void DataEngine::StartOver() {
+void GameManager::StartOver() {
     
     this->uiState->play = true; // Menu ended
 
@@ -614,7 +614,7 @@ void DataEngine::StartOver() {
 }
 
 //MenuMusic
-void DataEngine::MenuMusic() {
+void GameManager::MenuMusic() {
 
     SDL_ResumeAudioDevice(SDL_GetAudioStreamDevice(this->init_sound->get_streamMenu()));
 
