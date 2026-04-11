@@ -1,4 +1,4 @@
-#include "headers/Comp.h"
+#include "headers/GameManager.h"
 #include "Init_textures.h"
 #include "Init_sounds.h"
 #include <iostream>
