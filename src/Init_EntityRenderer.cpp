@@ -1,4 +1,4 @@
-#include "headers/Comp.h"
+#include "headers/GameManager.h"
 
 void GameManager::RenderTextureRotated() { // Char
     if(this->playerState->fix){
