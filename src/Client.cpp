@@ -42,9 +42,9 @@ void GameManager::forClient() {
         //-------------------------------------------------
 
         // Menu 
-        RenderImportantThings(renderer, this->init_texture->get_imageTextureMap(), this->coordinates->mapRect); // Map1
-        RenderImportantThings(renderer, this->init_texture->get_imageTexturePlay(), this->coordinates->playRect); // Play
-        RenderImportantThings(renderer, this->init_texture->get_imageTextureCont(), this->coordinates->contRect); // Continue
+        RenderThings(renderer, this->init_texture->get_imageTextureMap(), this->coordinates->mapRect); // Map1
+        RenderThings(renderer, this->init_texture->get_imageTexturePlay(), this->coordinates->playRect); // Play
+        RenderThings(renderer, this->init_texture->get_imageTextureCont(), this->coordinates->contRect); // Continue
         MoveTextContinue(); // Move text continue
         
         // MenuMusic
@@ -68,26 +68,26 @@ void GameManager::forClient() {
         // Changes the map
         if (this->uiState->changeMap == true) {
 
-            RenderImportantThings(renderer, this->init_texture->get_imageTextureFightmap(), this->coordinates->mapFightRect); // Fightmap
+            RenderThings(renderer, this->init_texture->get_imageTextureFightmap(), this->coordinates->mapFightRect); // Fightmap
 
-            RenderImportantThings(renderer, this->init_texture->get_imageTextureWall1(), this->coordinates->wall1Rect); // Wall1
-            RenderImportantThings(renderer, this->init_texture->get_imageTextureWall2(), this->coordinates->wall2Rect); // Wall2
+            RenderThings(renderer, this->init_texture->get_imageTextureWall1(), this->coordinates->wall1Rect); // Wall1
+            RenderThings(renderer, this->init_texture->get_imageTextureWall2(), this->coordinates->wall2Rect); // Wall2
 
-            RenderCoin(renderer, this->init_texture->get_imageTextureC0(), this->coordinates->coin0Rect); // Coins
-            RenderCoin(renderer, this->init_texture->get_imageTextureC1(), this->coordinates->coin1Rect);
-            RenderCoin(renderer, this->init_texture->get_imageTextureC2(), this->coordinates->coin2Rect);
-            RenderCoin(renderer, this->init_texture->get_imageTextureC3(), this->coordinates->coin3Rect);
-            RenderCoin(renderer, this->init_texture->get_imageTextureC4(), this->coordinates->coin4Rect);
-            RenderCoin(renderer, this->init_texture->get_imageTextureC5(), this->coordinates->coin5Rect);
+            RenderThings(renderer, this->init_texture->get_imageTextureC0(), this->coordinates->coin0Rect); // Coins
+            RenderThings(renderer, this->init_texture->get_imageTextureC1(), this->coordinates->coin1Rect);
+            RenderThings(renderer, this->init_texture->get_imageTextureC2(), this->coordinates->coin2Rect);
+            RenderThings(renderer, this->init_texture->get_imageTextureC3(), this->coordinates->coin3Rect);
+            RenderThings(renderer, this->init_texture->get_imageTextureC4(), this->coordinates->coin4Rect);
+            RenderThings(renderer, this->init_texture->get_imageTextureC5(), this->coordinates->coin5Rect);
 
             // MoveNpc and rendernpc in it.
             MoveNPC();
 
-            // Movement for character
+            // Movement for character and rendertexturerotated in it
             MovementChar();
 
             // Score text
-            RenderImportantThings(renderer, this->init_texture->get_imageTextureScore() , this->coordinates->scoreRect); // score (updated in updateScore)
+            RenderThings(renderer, this->init_texture->get_imageTextureScore() , this->coordinates->scoreRect); // score (updated in updateScore)
 
  
         }
