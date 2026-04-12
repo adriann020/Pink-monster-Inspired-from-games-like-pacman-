@@ -210,11 +210,11 @@ void GameManager::MovementChar() {
         
         this->playerState->doubletexturefix = true;
 
-        if(this->coordinates->destRect.y <= 30){ // up block
+        if(this->coordinates->destRect.y <= 30){ 
             this->coordinates->destRect.y += 4;
         }
 
-        if(this->coordinates->destRect.x >= 1211){ // right block
+        if(this->coordinates->destRect.x >= 1211){ 
             this->coordinates->destRect.x -= 4;
         }
 
@@ -243,11 +243,11 @@ void GameManager::MovementChar() {
             
             this->playerState->doubletexturefix = true;
     
-            if(this->coordinates->destRect.y <= 30){ // up block
+            if(this->coordinates->destRect.y <= 30){ 
                 this->coordinates->destRect.y += 4;
             }
     
-            if(this->coordinates->destRect.x <= 10){ // left block
+            if(this->coordinates->destRect.x <= 10){ 
                 this->coordinates->destRect.x += 4;
             }
     
@@ -276,11 +276,11 @@ void GameManager::MovementChar() {
             
             this->playerState->doubletexturefix = true;
     
-            if(this->coordinates->destRect.y > 730){ // down block
+            if(this->coordinates->destRect.y > 730){ 
                 this->coordinates->destRect.y -= 4;
             }
     
-            if(this->coordinates->destRect.x >= 1211){ // right block
+            if(this->coordinates->destRect.x >= 1211){ 
                 this->coordinates->destRect.x -= 4;
             }
     
@@ -309,11 +309,11 @@ void GameManager::MovementChar() {
             
             this->playerState->doubletexturefix = true;
     
-            if(this->coordinates->destRect.y > 730){ // down block
+            if(this->coordinates->destRect.y > 730){ 
                 this->coordinates->destRect.y -= 4;
             }
     
-            if(this->coordinates->destRect.x <= 10){ // left block
+            if(this->coordinates->destRect.x <= 10){
                 this->coordinates->destRect.x += 4;
             }
     
