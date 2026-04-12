@@ -1,5 +1,4 @@
 #include "headers/GameManager.h"
-
 // Everything below is running on loop in client -> Client.cpp !!!
 
 //Update score  
@@ -350,7 +349,6 @@ void GameManager::MovementChar() {
         }
 
         this->coordinates->destRect.y -= movement;
-        this->playerState->rotationAngle = 0;
 
         this->coordinates->srcrect.x = sprite * 32;        
         this->coordinates->srcrect.y = 0;
@@ -393,7 +391,6 @@ void GameManager::MovementChar() {
         }
 
         this->coordinates->destRect.y += movement;
-        this->playerState->rotationAngle = 0;
 
         this->coordinates->srcrect.x = sprite * 32;       
         this->coordinates->srcrect.y = 0;
@@ -435,7 +432,6 @@ void GameManager::MovementChar() {
         }
 
         this->coordinates->destRect.x -= movement;
-        this->playerState->rotationAngle = 0;
         this->playerState->fix = true;
 
         this->coordinates->srcrect.x = sprite * 32;       
@@ -464,7 +460,6 @@ void GameManager::MovementChar() {
         }
 
         this->coordinates->destRect.x += movement;
-        this->playerState->rotationAngle = 0;
         this->playerState->fix = false;
 
         this->coordinates->srcrect.x = sprite * 32;        
