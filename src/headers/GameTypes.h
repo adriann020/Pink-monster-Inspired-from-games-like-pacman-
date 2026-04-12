@@ -60,7 +60,7 @@ struct UIState {
   bool play = false; // Play 
   
   bool showLOST = false; // Showlost 
-  bool startover = false; // Fixed bug for teleport when pressing space 
+  bool startover = false; // Reset check
 
 };
 
