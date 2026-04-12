@@ -186,7 +186,7 @@ void GameManager::MovementChar() {
         this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
         SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
 
-        RenderIdleChar(); // char updated 
+        RenderIdleChar(); // char update
     }
 
     if(right && left || up && left && right || down && left && right || up && left && down || up && right && down || up && down ) { // fixed bug la taste apasate simultan 
@@ -200,7 +200,7 @@ void GameManager::MovementChar() {
         this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
         SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
 
-        RenderIdleChar(); // char updated 
+        RenderIdleChar(); // char update
         return;
     }    
 
@@ -237,7 +237,7 @@ void GameManager::MovementChar() {
         this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
         SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
 
-        SDL_RenderTexture(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect); // char updated
+        SDL_RenderTexture(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect); // char update
 
     }else if(up && left) {
             
@@ -270,7 +270,7 @@ void GameManager::MovementChar() {
             this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
             SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
 
-            SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect, 0 , NULL , SDL_FLIP_HORIZONTAL); // char updated
+            SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect, 0 , NULL , SDL_FLIP_HORIZONTAL); // char update
 
     }else if (down && right) {
             
@@ -303,7 +303,7 @@ void GameManager::MovementChar() {
             this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
             SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
 
-            SDL_RenderTexture(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect); // char updated
+            SDL_RenderTexture(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect); // char update
             
     }else if(down && left) {
             
@@ -336,7 +336,7 @@ void GameManager::MovementChar() {
             this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
             SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
 
-            SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect, 0 , NULL , SDL_FLIP_HORIZONTAL); // char updated
+            SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect, 0 , NULL , SDL_FLIP_HORIZONTAL); // char update
 
     }else this->playerState->doubletexturefix = false;
 
@@ -365,7 +365,7 @@ void GameManager::MovementChar() {
           this->init_texture->get_imageSurfaceChar() = LoadSurfaceFromPak( pak, "chars/pinkrun.bmp" );
           this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
           SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
-          SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect, 0 , NULL, SDL_FLIP_HORIZONTAL);
+          SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect, 0 , NULL, SDL_FLIP_HORIZONTAL); // char update
 
         }else {
 
@@ -377,7 +377,7 @@ void GameManager::MovementChar() {
           this->init_texture->get_imageSurfaceChar() = LoadSurfaceFromPak( pak, "chars/pinkrun.bmp" );
           this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
           SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
-          SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), & this->coordinates->srcrect, &this->coordinates->destRect , 0 , NULL, SDL_FLIP_NONE); 
+          SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), & this->coordinates->srcrect, &this->coordinates->destRect , 0 , NULL, SDL_FLIP_NONE); // char update
 
         }
     
@@ -407,7 +407,7 @@ void GameManager::MovementChar() {
            this->init_texture->get_imageSurfaceChar() = LoadSurfaceFromPak( pak, "chars/pinkrun.bmp" );
            this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
            SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
-           SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), & this->coordinates->srcrect, &this->coordinates->destRect , 0 , NULL, SDL_FLIP_NONE); 
+           SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), & this->coordinates->srcrect, &this->coordinates->destRect , 0 , NULL, SDL_FLIP_NONE); // char update 
 
         }else {
 
@@ -419,7 +419,7 @@ void GameManager::MovementChar() {
             this->init_texture->get_imageSurfaceChar() = LoadSurfaceFromPak( pak, "chars/pinkrun.bmp" );
             this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
             SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
-            SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), & this->coordinates->srcrect, &this->coordinates->destRect , 0 , NULL, SDL_FLIP_HORIZONTAL); 
+            SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), & this->coordinates->srcrect, &this->coordinates->destRect , 0 , NULL, SDL_FLIP_HORIZONTAL); // char update
         }
 
     }
@@ -448,7 +448,7 @@ void GameManager::MovementChar() {
         this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
         SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
 
-        SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect, 0 , NULL, SDL_FLIP_HORIZONTAL); 
+        SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), &this->coordinates->srcrect, &this->coordinates->destRect, 0 , NULL, SDL_FLIP_HORIZONTAL); // char update
 
     }
 
@@ -476,29 +476,29 @@ void GameManager::MovementChar() {
         this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
         SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
 
-        SDL_RenderTexture(renderer, this->init_texture->get_imageTextureChar(), & this->coordinates->srcrect, &this->coordinates->destRect); 
+        SDL_RenderTexture(renderer, this->init_texture->get_imageTextureChar(), & this->coordinates->srcrect, &this->coordinates->destRect); // char update
 
     }
 
         // Collisions char - walls 
         if (CollisionWall(this->coordinates->wall1Rect, this->coordinates->destRect) == 1 || CollisionWall(this->coordinates->wall2Rect, this->coordinates->destRect) == 1) {
 
-        // DOAR W
+        // W
         if (up && !down && !left && !right) {
             this->coordinates->destRect.y += knockbackAmount;
         }
 
-        // DOAR S
+        // S
         else if (down && !up && !left && !right) {
             this->coordinates->destRect.y -= knockbackAmount;
         }
 
-        // DOAR A
+        // A
         else if (left && !right && !up && !down) {
             this->coordinates->destRect.x += knockbackAmount;
         }
 
-        // DOAR D
+        // D
         else if (right && !left && !up && !down) {
             this->coordinates->destRect.x -= knockbackAmount;
         }
@@ -527,22 +527,22 @@ void GameManager::MovementChar() {
             this->coordinates->destRect.x -= knockbackAmount;
         }
 
-        // Dreapta + sus + jos 
+        // R + U + D 
         else if(right && up && down && !left){
             this->coordinates->destRect.x -= knockbackAmount;
         }
 
-        // Stanga + sus + jos
+        // L + U + D
         else if(left && up && down && !right){
             this->coordinates->destRect.x += knockbackAmount;
         }
         
-        // Sus + dreapta + stanga
+        // U + R + L
         else if(up && right && left && !down){
             this->coordinates->destRect.y += knockbackAmount;
         }
 
-        // Jos + dreapta + stanga
+        // D + R + L
         else if(down && right && left && !up){
             this->coordinates->destRect.y -= knockbackAmount;
         }
@@ -550,7 +550,7 @@ void GameManager::MovementChar() {
    
 }
 
-//Loss
+//Lost
 void GameManager::YouLost() {
 
     if(this->uiState->showLOST == true){
@@ -571,7 +571,7 @@ void GameManager::YouLost() {
         this->coordinates->gameovermapRect.h = HEIGHT; // back to normal
         this->coordinates->gameovermapRect.w = WIDTH; 
 
-        SDL_RenderTexture(renderer, this->init_texture->get_imageTextureStartOver(), NULL, &this->coordinates->StartOverRect); // peste render gameovermap sa se vada
+        SDL_RenderTexture(renderer, this->init_texture->get_imageTextureStartOver(), NULL, &this->coordinates->StartOverRect); // over gameovermap which is above
 
         this->playerState->speed = 0; // char
         this->npcState->speed2 = 0; // npc
@@ -585,7 +585,7 @@ void GameManager::StartOver() {
     
     this->uiState->play = true; // Menu ended
 
-    this->uiState->showLOST = false; // Startover , map etc ended
+    this->uiState->showLOST = false; // Startover etc ended
 
     if(this->uiState->startover == true) {
 
