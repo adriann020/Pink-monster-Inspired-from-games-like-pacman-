@@ -47,9 +47,9 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
 
         void RenderClear();  // !
 
-        void RenderTextureRotated(); // Update CHAR
+        void RenderIdleChar(); // Update CHAR 
         void RenderNPC(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &srcreect ,SDL_FRect &coord, SDL_FlipMode &flip); // NPCS
-        void RenderThings(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &coord); // Coins, Mapa, fightmap, play, gameovermap
+        void RenderThings(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &coord); // Coins, Map, fightmap, play, gameovermap
         
         void RenderPresent(); // !
 
@@ -57,7 +57,7 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
 
         void MovementChar(); // Movement char
         void MoveNPC(); // Move the NPC (rendernpc inside)
-        void AllCollisionsAndScore(); // Update score si collisions
+        void AllCollisionsAndScore(); // Update score and collisions
      
         // End
         void EndGame(){
