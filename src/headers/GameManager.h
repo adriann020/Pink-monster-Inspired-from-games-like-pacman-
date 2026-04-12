@@ -45,13 +45,13 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
 
         // ================= RENDER =================
 
-        void RenderClear();  // Important 
+        void RenderClear();  // !
 
         void RenderTextureRotated(); // Update CHAR
         void RenderNPC(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &srcreect ,SDL_FRect &coord, SDL_FlipMode &flip); // NPCS
         void RenderThings(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &coord); // Coins, Mapa, fightmap, play, gameovermap
         
-        void RenderPresent(); // Important
+        void RenderPresent(); // !
 
         // ================= LOGIC =================
 
