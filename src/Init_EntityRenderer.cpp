@@ -1,7 +1,7 @@
 #include "headers/GameManager.h"
 
 // Render Char (used for idle in MovementChar function and more)
-void GameManager::RenderTextureRotated() { 
+void GameManager::RenderIdleChar() { 
     if(this->playerState->fix){
         // could've done NULL instead of this->..->rotationAngle 
          SDL_RenderTextureRotated(renderer, this->init_texture->get_imageTextureChar(), NULL, &this->coordinates->destRect, this->playerState->rotationAngle, NULL, SDL_FLIP_HORIZONTAL);
