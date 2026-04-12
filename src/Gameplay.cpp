@@ -186,7 +186,7 @@ void GameManager::MovementChar() {
         this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
         SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
 
-        RenderTextureRotated(); // char updated 
+        RenderIdleChar(); // char updated 
     }
 
     if(right && left || up && left && right || down && left && right || up && left && down || up && right && down || up && down ) { // fixed bug la taste apasate simultan 
@@ -200,7 +200,7 @@ void GameManager::MovementChar() {
         this->init_texture->get_imageTextureChar() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceChar());
         SDL_DestroySurface(this->init_texture->get_imageSurfaceChar());
 
-        RenderTextureRotated(); // char updated 
+        RenderIdleChar(); // char updated 
         return;
     }    
 
