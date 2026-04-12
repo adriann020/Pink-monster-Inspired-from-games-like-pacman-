@@ -19,22 +19,22 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
 
         // Startup
         GameManager () {
-           forWindow();
-           forRenderer();
-           forCoordinates();
-           LoadTexture();
-           forMusic();
+           StartGame();
         }
 
         // Cleanup (end)
         ~GameManager () { 
-            deleteObjects();
-            ClearRenderer();
-            ClearWindow();
-            QuitTTF_And_SDL();
+            EndGame();
         }
 
         // Main
+        void StartGame(){
+            forWindow();
+            forRenderer();
+            LoadTexture();
+            forCoordinates();
+            forMusic();
+        }
         void forWindow();
         void forRenderer();
         void LoadTexture();
@@ -62,6 +62,12 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
         void AllCollisionsAndScore(); // Update score si collisions
      
         // End
+        void EndGame(){
+            deleteObjects();
+            ClearRenderer();
+            ClearWindow();
+            QuitTTF_And_SDL();
+        }
         void ClearRenderer();
         void ClearWindow();
         void QuitTTF_And_SDL();
