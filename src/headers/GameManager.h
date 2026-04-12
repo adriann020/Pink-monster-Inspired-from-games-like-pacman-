@@ -47,11 +47,9 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
 
         void RenderClear();  // Important 
 
-        void RenderCharacter(); // CHAR (updated in RenderTextureRotated , not used)
         void RenderTextureRotated(); // Update CHAR
         void RenderNPC(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &srcreect ,SDL_FRect &coord, SDL_FlipMode &flip); // NPCS
-        void RenderImportantThings(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &coord); // Mapa, fightmap, play, gameovermap
-        void RenderCoin(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &coord); // Coins
+        void RenderThings(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &coord); // Coins, Mapa, fightmap, play, gameovermap
         
         void RenderPresent(); // Important
 
