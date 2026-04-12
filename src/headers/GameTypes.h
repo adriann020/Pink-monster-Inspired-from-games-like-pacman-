@@ -82,7 +82,7 @@ struct AnimationState {
 
 struct Coordinates { 
 
-  RectF mapRect; // Mapa
+  RectF mapRect; // Map
   RectF destRect; // Char
   RectF mapFightRect; // Fight map
   RectF playRect; // Play
