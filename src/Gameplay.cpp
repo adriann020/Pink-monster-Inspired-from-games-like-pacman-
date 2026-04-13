@@ -13,7 +13,7 @@ void GameManager::updateScore() {
         this->init_texture->get_imageTextureScore() = nullptr;
     }
 
-    this->init_texture->get_imageSurfaceTexts() = TTF_RenderText_Blended(font, scoreText.c_str(), 0, color); // Amandoua aici pt update
+    this->init_texture->get_imageSurfaceTexts() = TTF_RenderText_Blended(font, scoreText.c_str(), 0, color); 
     this->init_texture->get_imageTextureScore() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceTexts());
     SDL_DestroySurface(this->init_texture->get_imageSurfaceTexts()); 
 
@@ -21,7 +21,7 @@ void GameManager::updateScore() {
 
 //Reset score
 void GameManager::ResetScore(){
-    if(CollisionNPC(this->coordinates->destRect, this->coordinates->npcRect) == 1 || CollisionNPC(this->coordinates->destRect, this->coordinates->blueNpcRect) == 1){
+    if(Collision(this->coordinates->destRect, this->coordinates->npcRect) == 1 || Collision(this->coordinates->destRect, this->coordinates->blueNpcRect) == 1){
 
         this->uiState->showLOST = true; // Verifies collision with NPCs
 
@@ -33,7 +33,7 @@ void GameManager::ResetScore(){
             this->init_texture->get_imageTextureScore() = nullptr;
         }
 
-        this->init_texture->get_imageSurfaceTexts() = TTF_RenderText_Blended(font, scoreText.c_str(), 0, color); // Amandoua aici for update
+        this->init_texture->get_imageSurfaceTexts() = TTF_RenderText_Blended(font, scoreText.c_str(), 0, color);  
         this->init_texture->get_imageTextureScore() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceTexts());
         SDL_DestroySurface(this->init_texture->get_imageSurfaceTexts()); 
     }
@@ -481,7 +481,7 @@ void GameManager::MovementChar() {
     }
 
         // Collisions char - walls 
-        if (CollisionWall(this->coordinates->wall1Rect, this->coordinates->destRect) == 1 || CollisionWall(this->coordinates->wall2Rect, this->coordinates->destRect) == 1) {
+        if (Collision(this->coordinates->wall1Rect, this->coordinates->destRect) == 1 || Collision(this->coordinates->wall2Rect, this->coordinates->destRect) == 1) {
 
         // W
         if (up && !down && !left && !right) {
