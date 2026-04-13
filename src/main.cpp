@@ -38,9 +38,9 @@ int main(int argc, char** argv) {
 
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO); // Video, audio
     TTF_Init(); // Texts
- 
+
+	Fixes();
     GameManager *startGame = new GameManager; // Startup
-    HideStuff();
 
     // Client
     startGame->forClient();
