@@ -4,14 +4,13 @@
 #include <SDL3/SDL.h> 
 #include <Windows.h>
 
+/**
+* Make a new asset pak with -> execute();
+* It can be called from the main thread.
+*/
 extern void execute(); // makepak.cpp
 
 int main(int argc, char** argv) {
-
-    /**
-	  * Make a new asset pak with -> execute();
-	  * It can be called below.
-    */
 
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO); // Video, audio
     TTF_Init(); // Texts
