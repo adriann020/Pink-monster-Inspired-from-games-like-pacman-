@@ -19,7 +19,7 @@
 */
 extern void execute(); // check makepak.cpp for more info
 
-void HideStuff(){
+void Fixes(){
 
 	// Ensure only one instance of the application is running
     HANDLE mutex = CreateMutex(NULL, TRUE, "MyUniqueAppMutexName"); 
