@@ -10,6 +10,7 @@ int main(int argc, char** argv) {
 
     /**
 	  * Make a new asset pak with -> execute();
+	  * It can be called below.
     */
 
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO); // Video, audio
