@@ -24,13 +24,15 @@ int main(int argc, char** argv) {
     TTF_Init(); // Texts
  
     GameManager *startGame = new GameManager; // Startup
-	
-    HANDLE mutex = CreateMutex(NULL, TRUE, "MyUniqueAppMutexName"); // Just one client 
+
+	// Ensure only one instance of the application is running
+    HANDLE mutex = CreateMutex(NULL, TRUE, "MyUniqueAppMutexName"); 
     if (GetLastError() == ERROR_ALREADY_EXISTS) {
         MessageBox(NULL, "Another client is already running.", "Client Check", MB_OK | MB_ICONEXCLAMATION);
         return 1;
     }
 
+	// Hide console window (for release mode)
     HWND windowHandle = GetConsoleWindow();
 	ShowWindow(windowHandle,SW_HIDE); // No console
 
