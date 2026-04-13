@@ -8,14 +8,14 @@ extern void execute(); // makepak.cpp
 
 int main(int argc, char** argv) {
 
-    //Load assets from pak 
+    //Load assets
     //execute();
 
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO); // Video, audio
     TTF_Init(); // Texts
  
     GameManager *startGame = new GameManager; // Startup
-
+	
     HANDLE mutex = CreateMutex(NULL, TRUE, "MyUniqueAppMutexName"); // Just one client 
     if (GetLastError() == ERROR_ALREADY_EXISTS) {
         MessageBox(NULL, "Another client is already running.", "Client Check", MB_OK | MB_ICONEXCLAMATION);
