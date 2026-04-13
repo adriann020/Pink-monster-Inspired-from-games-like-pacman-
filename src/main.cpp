@@ -4,7 +4,7 @@
 #include <SDL3/SDL.h> 
 #include <Windows.h>
 
-/** Written by Adrian 
+/** Written by adriann020
  * Builds a new asset package (PAK) from game resources.
  *
  * This function is implemented in makepak.cpp and is intended
