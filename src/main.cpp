@@ -8,7 +8,7 @@ extern void execute(); // makepak.cpp
 
 int main(int argc, char** argv) {
 
-     /**
+    /**
 	  * Make a new asset pak with -> execute();
 	  * Call it in the main thread.
     */
