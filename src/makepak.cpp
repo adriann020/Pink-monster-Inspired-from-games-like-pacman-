@@ -4,8 +4,11 @@
 #include <cstring>
 #include <algorithm>
 
-// Use this file whenever you add new assets to "assets/" folder to create/update "assets.pak"
-// However, after you compile once , you need to comment out the execute() call in main.cpp to avoid overwriting pak on each run.
+/**
+ * Use this file whenever you add new assets to "assets/" folder to create/update "assets.pak"
+ * However, after you compile once, you need to comment out the execute() call in main.cpp 
+ * to avoid overwriting pak on each run.
+*/
 
 namespace fs = std::filesystem;
 
