@@ -73,27 +73,12 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
         // Client
         void forClient(); 
 
-        // ================= COLLISIONS =================
+        // ================= COLLISION =================
 
-        // Collision Char-Npc
-        inline bool CollisionNPC(SDL_FRect& playerPos, SDL_FRect& npcPos) {
-            return SDL_HasRectIntersectionFloat(&playerPos, &npcPos);
+        inline bool Collision(SDL_FRect& entity1Pos, SDL_FRect& entity2Pos) {
+            return SDL_HasRectIntersectionFloat(&entity1Pos, &entity2Pos);
         }
 
-        // Collision Wall-Char
-        inline bool CollisionWall(SDL_FRect& wallPos, SDL_FRect& playerPos) {
-            return SDL_HasRectIntersectionFloat(&wallPos, &playerPos);
-        }
-
-        // Collision Coins-Char
-        inline bool CollisionCoins(SDL_FRect& coinPos, SDL_FRect& playerPos) {
-            return SDL_HasRectIntersectionFloat(&coinPos, &playerPos);
-        }
-
-        // Collision Wall-Coins
-        inline bool CollisionWALLCoins(SDL_FRect& wallPos, SDL_FRect& coinPos) {
-            return SDL_HasRectIntersectionFloat(&wallPos, &coinPos);
-        }
 
         // ================= UPDATES ====================
 
