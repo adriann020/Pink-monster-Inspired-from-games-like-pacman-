@@ -5,9 +5,17 @@
 #include <Windows.h>
 
 /**
-* Make a new asset pak with -> execute();
-* It can be called from the main thread.
-*/
+ * Builds a new asset package (PAK) from game resources.
+ *
+ * This function is implemented in makepak.cpp and is intended
+ * to be used for packaging assets (textures)
+ * into a single distributable file.
+ *
+ * Note:
+ * - Safe to call from the main thread.
+ * - Typically used during development or build steps,
+ *   not during normal game runtime.
+ */
 extern void execute(); // makepak.cpp
 
 int main(int argc, char** argv) {
