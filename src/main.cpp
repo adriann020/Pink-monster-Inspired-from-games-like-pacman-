@@ -34,9 +34,7 @@ int main(int argc, char** argv) {
 
 	// Hide console window (for release mode)
     HWND windowHandle = GetConsoleWindow();
-	ShowWindow(windowHandle,SW_HIDE); // No console
-
-    //------------------------------------------------------------
+	ShowWindow(windowHandle,SW_HIDE); 
 
     // Client
     startGame->forClient();
