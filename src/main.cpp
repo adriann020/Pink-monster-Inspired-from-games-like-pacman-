@@ -13,10 +13,11 @@
  *
  * Note:
  * - Safe to call from the main thread.
+ * - Performs heavy file I/O and processing.
  * - Typically used during development or build steps,
  *   not during normal game runtime.
- */
-extern void execute(); // makepak.cpp
+*/
+extern void execute(); // check makepak.cpp for more info
 
 int main(int argc, char** argv) {
 
@@ -45,4 +46,3 @@ int main(int argc, char** argv) {
 
     return 0;
 }
-
