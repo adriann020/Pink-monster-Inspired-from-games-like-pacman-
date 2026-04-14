@@ -28,7 +28,7 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
         }
 
         // Main
-        inline void StartGame(){
+        void StartGame(){
             forWindow();
             forRenderer();
             LoadTexture();
@@ -60,7 +60,7 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
         void AllCollisionsAndScore(); // Update score and collisions
      
         // End
-        inline void EndGame(){
+        void EndGame(){
             deleteObjects();
             ClearRenderer();
             ClearWindow();
@@ -136,4 +136,3 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
         void deleteObjects();
 
 };
-
