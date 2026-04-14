@@ -32,13 +32,11 @@ int main(int argc, char** argv) {
         MessageBox(NULL, "Another client is already running.", "Client Check", MB_OK | MB_ICONEXCLAMATION);
         return 1;
     }
-
+	
 	// Hide console window (for release mode)
     HWND windowHandle = GetConsoleWindow();
 	ShowWindow(windowHandle,SW_HIDE); 
-
-    //------------------------------------------------------------
-
+	
     // Client
     startGame->forClient();
 
