@@ -1,6 +1,6 @@
 #include "headers/GameManager.h"
 
-// Collisions and score increment (Collison used in Gameplay.cpp too)
+// Collisions and score increment between character and coins (Collison used in Gameplay.cpp too for the rest)
 void GameManager::AllCollisionsAndScore() { 
 
     // Coins-Char
