@@ -29,7 +29,7 @@ class InitTextures {
 
     inline auto& get_imageTextureWall1() { return imageTextureWall1; }
     inline auto& get_imageTextureWall2() { return imageTextureWall2; }
-    inline auto& get_wallsFromVector(int index) { return wallsTextures.at(index); } // Refactor (not built in yet)
+    auto& get_wallsFromVector(int index) { return wallsTextures.at(index); } // Refactor (not built in yet)
 
     //---------------COINS---------------//
     inline auto& get_imageSurfaceC0() { return imageSurfaceC0; }
@@ -40,7 +40,7 @@ class InitTextures {
     inline auto& get_imageTextureC4() { return imageTextureC4; }
     inline auto& get_imageTextureC5() { return imageTextureC5; }
 
-    inline auto& get_coinsFromVector(int index) { return coinsTextures.at(index); } // Refactor (not built in yet)
+    auto& get_coinsFromVector(int index) { return coinsTextures.at(index); } // Refactor (not built in yet)
 
      //---------------TEXTS---------------//
     inline auto& get_imageSurfaceTexts() { return textSurForTexts; }
