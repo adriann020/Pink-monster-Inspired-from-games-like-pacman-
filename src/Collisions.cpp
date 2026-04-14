@@ -1,6 +1,6 @@
 #include "headers/GameManager.h"
 
-// Collisions and score increment (CollisionNPC in ResetScore and CollisionWALL in MovementChar -> both in Gameplay.cpp)
+// Collisions and score increment (Collison used in Gameplay.cpp too)
 void GameManager::AllCollisionsAndScore() { 
 
     // Coins-Char
