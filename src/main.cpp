@@ -4,7 +4,7 @@
 #include <SDL3/SDL.h> 
 #include <Windows.h>
 
-/** 
+/**
  * Builds a new asset package (PAK) from game resources.
  *
  * This function is implemented in makepak.cpp and is intended
@@ -19,7 +19,12 @@
 */
 extern void execute(); // check makepak.cpp for more info
 
-inline void Fixes(){
+int main(int argc, char** argv) {
+
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO); // Video, audio
+    TTF_Init(); // Texts
+ 
+    GameManager *startGame = new GameManager; // Startup
 
 	// Ensure only one instance of the application is running
     HANDLE mutex = CreateMutex(NULL, TRUE, "MyUniqueAppMutexName"); 
@@ -31,16 +36,8 @@ inline void Fixes(){
 	// Hide console window (for release mode)
     HWND windowHandle = GetConsoleWindow();
 	ShowWindow(windowHandle,SW_HIDE); 
-	
-}
 
-int main(int argc, char** argv) {
-
-    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO); // Video, audio
-    TTF_Init(); // Texts
-
-	Fixes();
-    GameManager *startGame = new GameManager; // Startup
+    //------------------------------------------------------------
 
     // Client
     startGame->forClient();
