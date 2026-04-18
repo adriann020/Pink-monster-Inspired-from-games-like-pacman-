@@ -2,7 +2,9 @@
 #include "headers/GameManager.h"
 #include <SDL3_ttf/SDL_ttf.h>
 #include <SDL3/SDL.h> 
+#include <fstream>
 #include <Windows.h>
+#include <filesystem>
 
 /**
  * Builds a new asset package (PAK) from game resources.
@@ -18,25 +20,30 @@
  *   not during normal game runtime.
 */
 extern void execute(); // check makepak.cpp for more info
+extern void NoPak_Close(); // no pak -> client closes
 
 int main(int argc, char** argv) {
+
+    NoPak_Close();
 
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO); // Video, audio
     TTF_Init(); // Texts
  
     GameManager *startGame = new GameManager; // Startup
-
+    
 	// Ensure only one instance of the application is running
     HANDLE mutex = CreateMutex(NULL, TRUE, "MyUniqueAppMutexName"); 
     if (GetLastError() == ERROR_ALREADY_EXISTS) {
         MessageBox(NULL, "Another client is already running.", "Client Check", MB_OK | MB_ICONEXCLAMATION);
         return 1;
     }
-	
+
 	// Hide console window (for release mode)
     HWND windowHandle = GetConsoleWindow();
 	ShowWindow(windowHandle,SW_HIDE); 
-	
+
+    //------------------------------------------------------------
+
     // Client
     startGame->forClient();
 
