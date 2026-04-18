@@ -86,8 +86,6 @@ void NoPak_Close() {
             "The game couldn't find the assets.pak file.",
             "File Not Found",
             MB_OK | MB_ICONERROR);
-    }
-   if (a == 2) {
         exit(1);
     }
 }
