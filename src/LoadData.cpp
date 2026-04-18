@@ -60,13 +60,14 @@ SDL_Surface* GameManager::LoadSurfaceFromPak( Pak *pak,  const std::string& path
     }
 
     SDL_IOStream* io = SDL_IOFromConstMem(bytes.data(), bytes.size());
+    
     if (!io) {
         file << "[ERROR] SDL_IOFromConstMem failed: " << SDL_GetError() << std::endl;
         file.close();
         return nullptr;
     }
 
-    SDL_Surface* surface = SDL_LoadBMP_IO(io, true); //  SDL3 corect
+    SDL_Surface* surface = SDL_LoadBMP_IO(io, true); 
 
     if(!surface) {
         file << "[ERROR] SDL_LoadBMP_IO failed: " << SDL_GetError() << std::endl;
