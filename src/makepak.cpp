@@ -76,9 +76,9 @@ void execute() {
 
 
 void NoPak_Close() {
-    int a = 1;
+    
     if (!std::filesystem::exists("assets.pak")) {
-        a = 2;
+
         std::ofstream file("../data/logs.txt", std::ios::app);
         file << "[ERROR] The game couldn't find the assets.pak file." << std::endl;
 
