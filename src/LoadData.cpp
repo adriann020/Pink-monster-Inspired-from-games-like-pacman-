@@ -50,22 +50,27 @@ void GameManager::forWindow() {
 SDL_Surface* GameManager::LoadSurfaceFromPak( Pak *pak,  const std::string& path) {
 
     auto bytes = pak->read(path);
+    std::ofstream file("../data/logs.txt", std::ios::app);
+   
 
     if (bytes.empty()) {
-        SDL_Log("Pak read failed: %s", path.c_str());
+        file << "[ERROR] Pak read failed: " << path << std::endl;
+        file.close();
         return nullptr;
     }
 
     SDL_IOStream* io = SDL_IOFromConstMem(bytes.data(), bytes.size());
     if (!io) {
-        SDL_Log("SDL_IOFromConstMem failed: %s", SDL_GetError());
+        file << "[ERROR] SDL_IOFromConstMem failed: " << SDL_GetError() << std::endl;
+        file.close();
         return nullptr;
     }
 
-    SDL_Surface* surface = SDL_LoadBMP_IO(io, true); 
+    SDL_Surface* surface = SDL_LoadBMP_IO(io, true); //  SDL3 corect
 
     if(!surface) {
-        SDL_Log("SDL_LoadBMP_IO failed: %s", SDL_GetError());
+        file << "[ERROR] SDL_LoadBMP_IO failed: " << SDL_GetError() << std::endl;
+        file.close();
         return nullptr;
     }
 
@@ -126,7 +131,7 @@ void GameManager::LoadTexture() {
     SDL_DestroySurface(this->init_texture->get_imageSurfaceForNPCs());
 
     // ---------------- Walls ----------------
-    this->init_texture->get_imageSurfaceForWalls() = LoadSurfaceFromPak( pak, "walls/wall1.bmp" );
+    this->init_texture->get_imageSurfaceForWalls() = LoadSurfaceFromPak( pak, "walls/wall2.bmp" );
     this->init_texture->get_imageTextureWall1() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceForWalls());
     this->init_texture->get_imageTextureWall2() = SDL_CreateTextureFromSurface(renderer, this->init_texture->get_imageSurfaceForWalls());
     SDL_DestroySurface(this->init_texture->get_imageSurfaceForWalls());
