@@ -3,6 +3,7 @@
 #include <filesystem>
 #include <cstring>
 #include <algorithm>
+#include <windows.h>
 
 /**
  * Use this file whenever you add new assets to "assets/" folder to create/update "assets.pak"
@@ -71,4 +72,22 @@ void execute() {
 
     pak.seekp(0);
     pak.write((char*)&header, sizeof(header));
+}
+
+
+void NoPak_Close() {
+    int a = 1;
+    if (!std::filesystem::exists("assets.pak")) {
+        a = 2;
+        std::ofstream file("../data/logs.txt", std::ios::app);
+        file << "[ERROR] The game couldn't find the assets.pak file." << std::endl;
+
+        MessageBoxA(NULL,
+            "The game couldn't find the assets.pak file.",
+            "File Not Found",
+            MB_OK | MB_ICONERROR);
+    }
+   if (a == 2) {
+        exit(1);
+    }
 }
