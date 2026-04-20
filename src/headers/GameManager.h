@@ -132,7 +132,7 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
         int WIDTH = 1280;
         int HEIGHT = 800;
         int showscore;   
-        std::ofstream window_closed;
+        std::ofstream window_closed; // ClearWindow 
         void deleteObjects();
 
 };
