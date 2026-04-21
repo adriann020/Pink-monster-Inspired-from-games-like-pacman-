@@ -52,7 +52,7 @@ class InitTextures {
     private: 
     //---------------MAPS-WALLS-NPCS-CHAR---------------//
         Surface *imageSurfaceChar; // char
-        Surface *imageSurfaceForMaps; // mapa , fightmap, play, gameovermap
+        Surface *imageSurfaceForMaps; // map , fightmap, play, gameovermap
         Surface *imageSurfaceForNPCs; // owl,blue
         Surface *imageSurfaceForWalls; // walls
 
@@ -71,7 +71,7 @@ class InitTextures {
         std::vector<Texture*> wallsTextures; // 
 
         //---------------COINS---------------//
-        Surface *imageSurfaceC0; 
+        Surface *imageSurfaceC0; // for all below
 
         Texture *imageTextureC0; 
         Texture *imageTextureC1; 
@@ -92,7 +92,7 @@ class InitTextures {
         Texture *textTexStartOver; // startover
 
         // Validation
-        std::ofstream file_InitTex;
+        std::ofstream file_InitTex; // Init_textures.cpp
         static int NrObjects;
 
 }; 
