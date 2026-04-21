@@ -42,8 +42,6 @@ int main(int argc, char** argv) {
     HWND windowHandle = GetConsoleWindow();
 	ShowWindow(windowHandle,SW_HIDE); 
 
-    //------------------------------------------------------------
-
     // Client
     startGame->forClient();
 
