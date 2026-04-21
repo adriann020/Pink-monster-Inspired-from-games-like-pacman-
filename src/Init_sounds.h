@@ -13,7 +13,7 @@ class InitSounds {
     private:
     SDL_AudioStream *streamMenu; // menu music
     SDL_AudioStream *streamCoin; // coin sound
-    std::ofstream file_InitSound;
+    std::ofstream file_InitSound; // Init_sounds.cpp
     static int NrObjects;
 
 };
