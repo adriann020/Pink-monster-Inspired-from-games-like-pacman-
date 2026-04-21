@@ -13,7 +13,7 @@ void GameManager::RenderNPC(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRec
     SDL_RenderTextureRotated(rend, texture, &srcreect, &coord, 0, NULL, flip);
 }
 
-// Render everything else (Coins, Map, fightmap, play, gameovermap)
+// Render everything else (coins, map, fightmap, play, gameovermap)
 void GameManager::RenderThings(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &coord) {
     SDL_RenderTexture(rend, texture, NULL, &coord); 
 }
