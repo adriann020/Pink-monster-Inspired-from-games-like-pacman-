@@ -4,7 +4,6 @@
 #include <SDL3/SDL.h> 
 #include <fstream>
 #include <Windows.h>
-#include <filesystem>
 
 /**
  * Builds a new asset package (PAK) from game resources.
