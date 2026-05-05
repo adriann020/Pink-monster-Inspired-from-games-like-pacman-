@@ -585,7 +585,7 @@ void GameManager::StartOver() {
     
     this->uiState->play = true; // Menu ended
 
-    this->uiState->showLOST = false; // Startover etc ended
+    this->uiState->showLOST = false; // Startover ended
 
     if(this->uiState->startover == true) {
 
@@ -595,16 +595,16 @@ void GameManager::StartOver() {
         this->coordinates->destRect.x = 26;   // char original var
         this->coordinates->destRect.y = 550;
     
-        this->coordinates->npcRect.x = 19; // npc (to 19 , it is != 20 in movenpc)
+        this->coordinates->npcRect.x = 19; // npc (to 19, it is != 20 in movenpc)
         this->coordinates->npcRect.y = 300;
 
-        this->coordinates->blueNpcRect.x = 19; // npc (to 19 , it is != 20 in movenpc)
+        this->coordinates->blueNpcRect.x = 19; // npc (to 19, it is != 20 in movenpc)
         this->coordinates->blueNpcRect.y = 640;
 
     }
 
-    this->coordinates->gameovermapRect.h = 0; 
-    this->coordinates->gameovermapRect.w = 0; 
+    this->coordinates->gameovermapRect.h = 0; // (hidden)
+    this->coordinates->gameovermapRect.w = 0; // (hidden)
 
 }
 
