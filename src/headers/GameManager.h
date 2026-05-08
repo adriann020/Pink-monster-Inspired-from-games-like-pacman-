@@ -12,7 +12,7 @@
 #define WIDTH 1280
 // WINDOW_HEIGHT
 #define HEIGHT 800
-// Delete instances
+// Delete instances 
 #define DELETE_OBJ(p) { delete (p); (p) = nullptr; }
 
 // --------- Aliases ---------
