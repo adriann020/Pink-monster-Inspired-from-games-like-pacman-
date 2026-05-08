@@ -8,8 +8,9 @@
 #include "../pak.h"
 #include <SDL3/SDL.h>
 
-// WINDOW_WIDTH_&_HEIGHT
+// WINDOW_WIDTH
 #define WIDTH 1280
+// WINDOW_HEIGHT
 #define HEIGHT 800
 
 // --------- Aliases ---------
