@@ -286,17 +286,9 @@ void GameManager::forMusic() {
 }
 
 
-//-----------------------------------------------  Important
+//----------------------------------------------- 
 void GameManager::SetRenderColor() {
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); 
-}
-
-void GameManager::RenderClear() {
-    SDL_RenderClear(renderer);
-}
-
-void GameManager::RenderPresent() {
-    SDL_RenderPresent(renderer);
 }
 //------------------------------------------------
 
@@ -321,17 +313,17 @@ void GameManager::ClearWindow() {
 }
 
 void GameManager::deleteObjects(){
-    SAFE_DELETE(score);
-    SAFE_DELETE(pak);
-    SAFE_DELETE(playerState);
-    SAFE_DELETE(npcState);
-    SAFE_DELETE(effectState);
-    SAFE_DELETE(musicState);
-    SAFE_DELETE(uiState);
-    SAFE_DELETE(inputState);
-    SAFE_DELETE(coordinates);
-    SAFE_DELETE(init_texture);
-    SAFE_DELETE(init_sound);
+    DELETE_OBJ(score);
+    DELETE_OBJ(pak);
+    DELETE_OBJ(playerState);
+    DELETE_OBJ(npcState);
+    DELETE_OBJ(effectState);
+    DELETE_OBJ(musicState);
+    DELETE_OBJ(uiState);
+    DELETE_OBJ(inputState);
+    DELETE_OBJ(coordinates);
+    DELETE_OBJ(init_texture);
+    DELETE_OBJ(init_sound);
 }
 
 void GameManager::QuitTTF_And_SDL() {
