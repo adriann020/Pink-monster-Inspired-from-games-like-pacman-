@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 
+
 void GameManager::forWindow() { 
     
     std::ofstream file("../data/logs.txt", std::ios::app);
@@ -67,13 +68,13 @@ SDL_Surface* GameManager::LoadSurfaceFromPak( Pak *pak,  const std::string& path
         return nullptr;
     }
 
-    SDL_Surface* surface = SDL_LoadBMP_IO(io, true); 
+    SDL_Surface* surface = SDL_LoadBMP_IO(io, true); //  SDL3 corect
 
     if(!surface) {
         file << "[ERROR] SDL_LoadBMP_IO failed: " << SDL_GetError() << std::endl;
         file.close();
-        SDL_CloseIO(io); 
         return nullptr;
+        SDL_CloseIO(io); 
     }
 
     return surface;
@@ -320,29 +321,17 @@ void GameManager::ClearWindow() {
 }
 
 void GameManager::deleteObjects(){
-    delete this->score; // pointer for score
-    this->score = nullptr; // pointer for score
-    delete this->pak; // pointer for pak
-    this->pak = nullptr; // pointer for pak
-    delete this->playerState; // pointer for game state
-    this->playerState = nullptr; // pointer for game state
-    delete this->npcState; // pointer for npc state
-    this->npcState = nullptr; // pointer for npc state
-    delete this->effectState; // pointer for effect state
-    this->effectState = nullptr; // pointer for effect state
-    delete this->musicState; // pointer for music state
-    this->musicState = nullptr; // pointer for music state
-    delete this->uiState; // pointer for UI state
-    this->uiState = nullptr; // pointer for UI state
-    delete this->inputState; // pointer for input state
-    this->inputState = nullptr; // pointer for input state
-    delete this->coordinates; // pointer for coordinates
-    this->coordinates = nullptr; // pointer for coordinates
-    
-    delete this->init_texture; // pointer for textures
-    this->init_texture = nullptr; // pointer for textures
-    delete this->init_sound; // pointer for sounds
-    this->init_sound = nullptr; // pointer for sounds
+    SAFE_DELETE(score);
+    SAFE_DELETE(pak);
+    SAFE_DELETE(playerState);
+    SAFE_DELETE(npcState);
+    SAFE_DELETE(effectState);
+    SAFE_DELETE(musicState);
+    SAFE_DELETE(uiState);
+    SAFE_DELETE(inputState);
+    SAFE_DELETE(coordinates);
+    SAFE_DELETE(init_texture);
+    SAFE_DELETE(init_sound);
 }
 
 void GameManager::QuitTTF_And_SDL() {
