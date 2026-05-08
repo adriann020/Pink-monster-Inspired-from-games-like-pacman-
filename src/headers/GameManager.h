@@ -22,11 +22,9 @@ using Texture = SDL_Texture; // For textures
 
 /*
  *GameManager class is responsible for managing the game state, rendering, and logic. 
- *It handles the main game loop, including rendering the character, NPCs, coins, and map,
- *as well as processing user input and updating the game state based on collisions and score. 
- *The class also manages the initialization and cleanup of SDL resources, such as the window and renderer, 
+ *The class also manages the initialization and cleanup of SDL resources, such as the window and renderer (etc), 
  *and handles music playback for the menu. 
- *Additionally, it includes functions for loading assets from a pak file and updating the score display. 
+ *Additionally, it includes a function for loading assets from a pak file.
  */
 class GameManager : public AnimationState, public Text, public ClientFixes {
 
