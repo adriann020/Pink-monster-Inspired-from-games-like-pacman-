@@ -13,6 +13,9 @@
 // WINDOW_HEIGHT
 #define HEIGHT 800
 
+// Delete instances
+#define SAFE_DELETE(p) { delete (p); (p) = nullptr; }
+
 // --------- Aliases ---------
 using Surface = SDL_Surface; // For surfaces
 using Texture = SDL_Texture; // For textures
