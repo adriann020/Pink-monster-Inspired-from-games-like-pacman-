@@ -12,9 +12,8 @@
 #define WIDTH 1280
 // WINDOW_HEIGHT
 #define HEIGHT 800
-
 // Delete instances
-#define SAFE_DELETE(p) { delete (p); (p) = nullptr; }
+#define DELETE_OBJ(p) { delete (p); (p) = nullptr; }
 
 // --------- Aliases ---------
 using Surface = SDL_Surface; // For surfaces
@@ -58,13 +57,13 @@ class GameManager : public AnimationState, public Text, public ClientFixes {
 
         // ================= RENDER =================
 
-        void RenderClear();  // !
+        inline void RenderClear() {SDL_RenderClear(renderer);} // !
 
         void RenderIdleChar(); // Update CHAR 
         void RenderNPC(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &srcreect ,SDL_FRect &coord, SDL_FlipMode &flip); // NPCS
         void RenderThings(SDL_Renderer *&rend, SDL_Texture *&texture, SDL_FRect &coord); // Coins, Map, fightmap, play, gameovermap
         
-        void RenderPresent(); // !
+        inline void RenderPresent() {SDL_RenderPresent(renderer);} // !
 
         // ================= LOGIC =================
 
